@@ -1,15 +1,65 @@
-.master-class
+section.master-class
     .container
-        .master-class-date 9 января, Барнаул
-            .master-class-choice
-                .master-class-all Мастер-классы
-                .master-class-free Только бесплатные
-        .master-class-card
-            .master-class-card__inner
-                .master-class-card__date 11 окт 2018 Барнаул 
-                .master-class-card__label
-                    .master-class-card__type Мастер-класс
-                    .master-class-card__direction Менеджмент 
-
-                .master-class-card__title 
-                    |Менеджер и команда. Как создать команду мечты
+        .master-class__date 9 января, Барнаул
+        ul.master-class__choice
+            li Мастер-классы 
+                span
+            li Только бесплатные
+                span
+        .mc-card__list
+            .mc-card
+                .mc-card__inner
+                    .mc-card__content
+                        .mc-card__favorite
+                        .mc-card__date 11 окт 2018 Барнаул 
+                        ul.mc-card__tags
+                            li Мастер-класс
+                            li Менеджмент 
+                        .mc-card__title 
+                            |Менеджер и команда. Как создать команду мечты
+                    .mc-card__bottom
+                        .mc-card__price Стоимость
+                            | 
+                            span от 6000 руб. 
+            .mc-card
+                .mc-card__inner
+                    .mc-card__content
+                        .mc-card__favorite
+                        .mc-card__date 11 окт 2018 Барнаул 
+                        ul.mc-card__tags
+                            li Мастер-класс
+                            li Менеджмент 
+                        .mc-card__title 
+                            |Эффективные продажи 
+                    .mc-card__bottom
+                        .mc-card__price Стоимость
+                            | 
+                            span от 6000 руб.
+            .mc-card
+                .mc-card__inner
+                    .mc-card__content
+                        .mc-card__favorite
+                        .mc-card__date 11 окт 2018 Барнаул 
+                        ul.mc-card__tags
+                            li Мастер-класс
+                            li Менеджмент 
+                        .mc-card__title 
+                            | Стратегии 2019. Как создать бизес с нуля
+                    .mc-card__bottom
+                        .mc-card__price Стоимость
+                            | 
+                            span от 6000 руб.
+        .mc-card-pic__list
+            .mc-card-pic
+                .mc-card-pic__content(style="background-image: url('pictures/mc-card-pic-1.jpg')")
+                    .mc-card-pic__inner
+                        .mc-card-pic__favorite
+                        .mc-card-pic__date 11 окт 2018 Барнаул 
+                        ul.mc-card-pic__tags
+                            li Мастер-класс
+                .mc-card-pic__bottom
+                    .mc-card-pic__title 
+                        |Менеджер и команда. Как создать команду мечты
+                    .mc-card-pic__price Стоимость
+                        | 
+                        span от 6000 руб. 
