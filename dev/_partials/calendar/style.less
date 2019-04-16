@@ -1,0 +1,43 @@
+.calendar {
+    height: 121px;
+    background: @bunting;
+
+    &-top {
+        display: flex;
+        justify-content: space-around;
+
+    }
+    &-date {
+        font-size: 20px;
+        //font-family: HelveticaNeueCyr;
+        color: @white;
+    }
+
+    &-expand {
+        position: relative;
+        font-size: 14px;
+        //font-family: HelveticaNeueCyr;
+        color: @white;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 5px;
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &-number {
+        font-size: 14px;
+        color: @white;
+        //font-family: HelveticaNeueCyr;
+    }
+
+    &-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+    }
+}
