@@ -1,11 +1,42 @@
 .developments {
-    margin-top: 33px;
-    height: 439px;
+    padding-top: 30px;
+    padding-bottom: 25px;
 
-    &__title {
-        //font-family: HelveticaNeueCyr;
+    &__list {
+        list-style-type: none;
+    }
+
+    &__item {
+        padding: 20px 0 10px;
+        border-bottom: 1px solid #e3e4e5;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__link {
+        font-weight: bold;
         font-size: 16px;
-        line-height: 20px;
-        color: @night-rider;
+        color: @midnight-express;
+        line-height: 22px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &-bottom {
+        padding-top: 15px;
+        font-weight: normal;
+        font-size: 13px;
+        color: @santas-grey;
+    }
+
+    &-tag {
+        display: inline-block;
+        margin-right: 7px;
+    }
+
+    &-date {
+        display: inline-block;
     }
 }

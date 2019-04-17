@@ -1,26 +1,41 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: HelveticaNeueCyr, serif;
-  font-size: 14px;
-  line-height: normal;
-  font-weight: normal;
-  color: #9A9A9E;
+    font-family: HelveticaNeueCyr, serif;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: normal;
+    color: #9a9a9e;
 }
 
 //colors
 @bunting: #313443;
-@white: #FFFFFF;
-@lavender-blush: #F5F0F2;
+@white: #ffffff;
+@lavender-blush: #f5f0f2;
 @night-rider: #333333;
-@corn: #FFE661;
-@eclipse: #3F3F3F;
-@cerise: #EE3769;
+@corn: #ffe661;
+@eclipse: #3f3f3f;
+@cerise: #ee3769;
+@santas-grey: #9a9a9e;
+@midnight-express: #151d3f;
+@whisper: #e5e5e5;
 
 .container {
-  padding: 0 15px;
-  margin: 0 auto;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.section {
+    &__title {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 20px;
+        color: @night-rider;
+        padding-bottom: 7px;
+        border-bottom: 3px solid #6441a5;
+        margin-bottom: 5px;
+    }
 }

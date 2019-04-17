@@ -1,5 +1,5 @@
 .master-class {
-    padding-top: 20px;
+    padding: 20px 0;
     background: @lavender-blush;
 
     &__date {
@@ -15,28 +15,36 @@
         color: @night-rider;
 
         & li {
-            padding: 6px 19px 8px 8px;
+            position: relative;
+            padding: 6px 30px 8px 8px;
             margin-right: 8px;
             background: @corn;
             border-radius: 4px;
             list-style-type: none;
 
+            &::before {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 21px;
+                background: rgba(21, 29, 63, 0.3);
+                right: 20px;
+                top: 4px;
+            }
+
             & span {
-                position: relative;
-                background-image: url('../icons/master-class-close.svg');
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 1px;
-                    height: 21px;
-                    background: rgba(21, 29, 63, 0.3);
-                }
-
+                position: absolute;
+                right: 6px;
+                left: auto;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 8px;
+                height: 8px;
+                background-image: url("../img/master-class-close.svg");
             }
         }
     }
-
 
     & .mc-card {
         width: 100%;
@@ -46,6 +54,10 @@
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.09);
         padding: 12px;
         box-sizing: border-box;
+
+        &:first-child {
+            margin-top: 0;
+        }
 
         &__list {
             padding: 20px 0;
@@ -72,7 +84,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            color: #9A9A9E;
+            color: @santas-grey;
             font-size: 16px;
             .fal;
             .fa-icon;
@@ -116,15 +128,15 @@
 
         &__price {
             position: relative;
-            color: #9A9A9E;
+            color: @santas-grey;
             font-weight: 300;
             padding-left: 22px;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 0;
-                background-image: url('../img/master-class-purse.svg');
+                background-image: url("../img/master-class-purse.svg");
                 width: 14px;
                 height: 14px;
             }
@@ -134,17 +146,83 @@
                 font-weight: 300;
             }
         }
+
+        &__banner {
+            margin-top: 40px;
+            max-width: 345px;
+
+            & img {
+                width: 100%;
+            }
+        }
     }
 
     & .mc-card-pic {
-
+        margin-bottom: 22px;
         &__content {
             height: 225px;
+            position: relative;
             /*background-color: rgba(0, 0, 0, 0.15);
             background-position: center;
             background-size: cover;*/
 
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15)
+            );
+
+            background-repeat: no-repeat;
+        }
+
+        &__inner {
+            padding: 12px;
+        }
+
+        &__date {
+            font-weight: normal;
+            color: @white;
+        }
+
+        &__tags {
+            display: inline-block;
+            text-align: center;
+            padding: 3px;
+            margin-top: 8px;
+            margin-right: 8px;
+            min-width: 111px;
+            list-style-type: none;
+            background-color: @cerise;
+            color: @white;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        &__title {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            color: @midnight-express;
+        }
+
+        &__price {
+            font-weight: 300;
+            color: @eclipse;
+            margin-top: 10px;
+        }
+
+        &__favorite {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: @white;
+            font-size: 16px;
+            .fal;
+            .fa-icon;
+
+            &::before {
+                content: @fa-var-bookmark;
+            }
         }
     }
 }
