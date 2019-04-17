@@ -1,25 +1,37 @@
 .slider-expert {
-    margin-top: 29px;
-    margin-bottom: 38px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     background: @whisper;
+
+
     &__list {
         margin-top: 11px;
         list-style-type: none;
+
     }
+
     &__img {
-        height: 100%;
-        width: 100%;
+        max-height: 165px;
+
+        & img {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     &__item {
         display: inline-block;
-        max-width: 320px;
-        max-height: 165px;
         margin-right: 10px;
+        max-width: 320px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__info {
         background: @white;
+        padding: 15px 7px;
 
         &-date {
             font-weight: 300;
@@ -27,13 +39,51 @@
         }
 
         &-title {
+            margin-top: 5px;
             font-weight: 500;
             font-size: 17px;
             color: @midnight-express;
         }
+
         &-leading {
+            margin-top: 10px;
             font-weight: normal;
             color: @cerise;
+        }
+    }
+
+    & .slick-dots {
+        position: absolute;
+        right: 0;
+        top: -43px;
+        list-style-type: none;
+        display: inline-block;
+
+        & li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            & button {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #E3E4E5;
+                padding: 0;
+                border: none;
+                font: inherit;
+                font-size: 0;
+                color: inherit;
+                cursor: pointer;
+            }
+        }
+
+        & li.slick-active button {
+            background: #3F3F3F;
         }
     }
 }
