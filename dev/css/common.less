@@ -43,10 +43,33 @@ body {
 
 .button {
     padding: 15px;
-    background: #ee3769;
-    color: #ffffff;
+    background: @cerise;
+    color: @white;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: normal;
     text-align: center;
+}
+
+.auth {
+    font-size: 17px;
+    line-height: normal;
+    color: @white;
+
+    &__login {
+        &::after {
+            content: '/';
+            position: relative;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        &:last-child::after {
+            content: none;
+        }
+    }
+}
+
+.overflow-hiiden {
+    overflow: hidden;
 }

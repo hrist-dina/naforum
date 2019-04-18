@@ -1,6 +1,35 @@
 .header {
-    padding: 15px 0;
-    background: linear-gradient(146.17deg, #6441A5 0.44%, #2A0845 90.38%);
+
+    &.mobile-menu_active {
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 110;
+        height: 100%;
+        overflow: auto;
+    }
+
+    &-left,
+    &-middle,
+    &-right {
+        width: 33%;
+    }
+
+    &-middle {
+        text-align: center;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-bgc {
+        padding: 15px 0;
+        background: linear-gradient(146.17deg, #6441A5 0.44%, #2A0845 90.38%);
+
+    }
 
     &-inner {
         display: flex;
@@ -10,6 +39,7 @@
 
     &-logo {
         max-width: 138px;
+        display: inline-block;
 
         &__img {
             width: 100%;
@@ -48,5 +78,3 @@
         }
     }
 }
-
-.burger {}

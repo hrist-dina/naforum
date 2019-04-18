@@ -3,6 +3,9 @@
     padding-bottom: 20px;
     background: @whisper;
 
+    & .section__title {
+        margin-right: -15px;
+    }
 
     &__list {
         margin-top: 11px;
@@ -46,9 +49,31 @@
         }
 
         &-leading {
-            margin-top: 10px;
             font-weight: normal;
             color: @cerise;
+        }
+
+        &-bottom {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        &-reviews {
+            .fa-icon;
+            .fas;
+            margin-left: 10px;
+            color: #C4C4C4;
+            line-height: 20px;
+
+            & span {
+                font-family: HelveticaNeueCyr, serif;
+                font-weight: 300;
+            }
+
+            &::before {
+                content: @fa-var-comment-dots;
+                margin-right: 5px;
+            }
         }
     }
 
