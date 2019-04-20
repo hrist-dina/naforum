@@ -1,38 +1,17 @@
-section.developments
-    .container
-        .section__title Лучшие события
-        ul.developments__list
-            li.developments__item
-                a.developments__link(href="#")
-                    | Мастер-класс для руководителей 
-                    |«Управление сложными подчиненными» 
-                .developments-bottom
-                    .developments-tag Мастер-класс
-                    .developments-date 18 ноя 2018
-            li.developments__item
-                a.developments__link(href="#")
-                    | Московский цифровой форум
-                .developments-bottom
-                    .developments-tag Мастер-класс
-                    .developments-date 18 ноя 2018
-            li.developments__item
-                a.developments__link(href="#")
-                    | Информационные технологии в ритейле: 
-                    |диалог на высшем уровне 
-                .developments-bottom
-                    .developments-tag Мастер-класс
-                    .developments-date 18 ноя 2018
-            li.developments__item
-                a.developments__link(href="#")
-                    | Инновационные решения для транспорта 
-                .developments-bottom
-                    .developments-tag Мастер-класс
-                    .developments-date 18 ноя 2018
-            li.developments__item
-                a.developments__link(href="#")
-                    | Национальная премия бизнес-коммуникаций
-                .developments-bottom
-                    .developments-tag Мастер-класс
-                    .developments-date 18 ноя 2018
+mixin developments(title, list, showAll = false)
+    section.developments
+        .container
+            .section__title=title
+            ul.developments__list
+                each item in list
+                    li.developments__item
+                        a.developments__link(href="#")=item.text
+                        .developments-bottom
+                            .developments-tag=item.tag
+                            .developments-date=item.date
+        if showAll
+            .button-link__wrap
+                a.button-link(href="#") Показать все
+
 
 

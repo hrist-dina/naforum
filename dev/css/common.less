@@ -23,6 +23,10 @@ body {
 @midnight-express: #151d3f;
 @whisper: #e5e5e5;
 
+// gradient colors
+@purple-light: #6441a5;
+@purple-dark: #2a0845;
+
 .container {
     padding: 0 15px;
     margin: 0 auto;
@@ -41,6 +45,12 @@ body {
     }
 }
 
+.map-balloon {
+    width: 52px;
+    height: 53px;
+    background-image: url("/img/map-balloon.svg");
+}
+
 .button {
     padding: 15px;
     background: @cerise;
@@ -51,6 +61,33 @@ body {
     text-align: center;
 }
 
+.button-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+    color: #ee3769;
+
+    &__wrap {
+        text-align: center;
+    }
+}
+
+.button-transparent {
+    border: 2px solid #ee3769;
+    box-sizing: border-box;
+    line-height: normal;
+    text-align: center;
+    color: #ee3769;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 10px 40px;
+}
+
 .auth {
     font-size: 17px;
     line-height: normal;
@@ -58,7 +95,7 @@ body {
 
     &__login {
         &::after {
-            content: '/';
+            content: "/";
             position: relative;
             margin-left: 5px;
             margin-right: 5px;
@@ -72,4 +109,71 @@ body {
 
 .overflow-hiiden {
     overflow: hidden;
+}
+
+// slider-content
+
+.slider-content {
+    padding-top: 25px;
+    padding-bottom: 20px;
+
+    &__list {
+        margin-top: 11px;
+        list-style-type: none;
+        margin-right: -15px;
+    }
+
+    &__img {
+        max-height: 165px;
+
+        & img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 10px;
+        max-width: 320px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    & .slick-dots {
+        position: absolute;
+        right: 15px;
+        top: -43px;
+        list-style-type: none;
+        display: inline-block;
+
+        & li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            & button {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #e3e4e5;
+                padding: 0;
+                border: none;
+                font: inherit;
+                font-size: 0;
+                color: inherit;
+                cursor: pointer;
+            }
+        }
+
+        & li.slick-active button {
+            background: #3f3f3f;
+        }
+    }
 }

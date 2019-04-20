@@ -1,7 +1,7 @@
-.event-card-mc {
+.event-master-class {
     &__img {
         position: relative;
-        max-height: 204px;
+        min-height: 150px;
 
         &::before {
             content: "";
@@ -23,22 +23,41 @@
         }
     }
 
-    &__info {
-        background: @white;
-        padding: 15px 0;
+    &__rating {
+        position: absolute;
+        top: -26px;
+        right: 0;
+        width: 52px;
+        height: 52px;
+        background-image: url("/img/rating-mc-event.svg");
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &-date {
+        & span {
+            font-weight: 900;
+            font-size: 22px;
+            line-height: 28px;
+            text-align: center;
+            color: #151d3f;
+        }
+    }
+    &__title {
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 28px;
+        color: #151d3f;
+    }
+    &__info {
+        position: relative;
+        background: @white;
+        padding: 20px 0 30px;
+
+        &-type {
             font-weight: 300;
             font-size: 16px;
             line-height: 21px;
             color: #3f3f3f;
-        }
-
-        &-title {
-            font-weight: 900;
-            font-size: 22px;
-            line-height: 28px;
-            color: #151d3f;
         }
     }
 

@@ -1,56 +1,48 @@
-$(document).ready(function () {
-  $('.js-hamburger').on('click', function () {
-    $(this).toggleClass('is-active');
-    $('.js-mobile-menu').toggleClass('mobile-menu_active');
-    $('html').toggleClass('overflow-hiiden');
+$(document).ready(function() {
+    $(".js-hamburger").on("click", function() {
+        $(this).toggleClass("is-active");
+        $(".js-mobile-menu").toggleClass("mobile-menu_active");
+        $("html").toggleClass("overflow-hiiden");
+    });
 
-  });
+    $(".js-slider-expert").slick({
+        arrows: false,
+        infinite: false,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true
+    });
 
-  var slickSlider = $('.js-slider-expert');
-  slickSlider.slick({
-    arrows: false,
-    infinite: false,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: true
-    //centerMode: true,
-    //centerPadding: '15px',
-    //prevArrow:
-    //'<div class="slider-brand__arrow-left"><i class="fas fa-angle-left"></i></div>',
-    //nextArrow:
-    //'<div class="slider-brand__arrow-right"><i class="fas fa-angle-right"></i></div>'
-    /*responsive: [
-        {
-          settings: {
-            slidesToShow: 1,
-            arrows: false,
-          }
-        }
-    ],*/
-  });
+    $(".js-slider-places").slick({
+        arrows: false,
+        infinite: false,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true
+    });
 
-  var slickSlider = $('.js-slider-places');
-  slickSlider.slick({
-    arrows: false,
-    infinite: false,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: true
-    //centerMode: true,
-    //centerPadding: '15px',
-    //prevArrow:
-    //'<div class="slider-brand__arrow-left"><i class="fas fa-angle-left"></i></div>',
-    //nextArrow:
-    //'<div class="slider-brand__arrow-right"><i class="fas fa-angle-right"></i></div>'
-    /*responsive: [
-        {
-          settings: {
-            slidesToShow: 1,
-            arrows: false,
-          }
-        }
-    ],*/
-  });
+    $(".js-event-slider").slick({
+        arrows: false,
+        infinite: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        variableWidth: true
+    });
+
+    var map;
+    DG.then(function() {
+        map = DG.map("js-event-map", {
+            center: [54.98, 82.89],
+            zoom: 13
+        });
+
+        var mapIcon = DG.divIcon({
+            className: "map-balloon",
+            iconSize: [52, 53]
+        });
+        DG.marker([54.98, 82.89], { icon: mapIcon }).addTo(map);
+    });
 });

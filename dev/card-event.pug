@@ -1,8 +1,18 @@
 extends _layouts/home	
 block content
-    include _partials/event-card-mc/index
-    include _partials/event-card-date/index
-    include _partials/event-card-expert/index
-    include _partials/event-card-description/index
+    include _data/card-event
+    include _partials/developments/index
+    include _partials/banner/index
 
+    include _partials/event-master-class/index
+    include _partials/event-date/index
+    include _partials/event-expert/index
+    include _partials/event-description/index
+    include _partials/event-interesting/index
+    include _partials/event-schedule/index
+    include _partials/event-slider/index
+    include _partials/event-participate/index
+    include _partials/comment/index
+    +developments(developments.title, developments.list, true)
+    +banner(banner)
     
