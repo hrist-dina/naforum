@@ -1,14 +1,15 @@
 extends _layouts/home	
 block content
-        include _data/index
+        include _data/home
         include _partials/developments/index
         include _partials/banner/index
+        include _partials/rating/index
 
         include _partials/calendar/index
         include _partials/master-class/index
         +developments(developments.title, developments.list)
         include _partials/slider-expert/index
-        include _partials/rating/index
+        +rating(rating.title, rating.list, true)
         include _partials/event-organizer/index
         include _partials/promotion/index
         include _partials/slider-places/index

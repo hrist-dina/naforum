@@ -2,12 +2,11 @@ extends _layouts/home
 block content
     include _data/location
     include _partials/info/index
+    include _partials/description/index
+    include _partials/developments/index
 
     include _partials/location-place/index
     +info(info.list, info.addButton)
-    include _partials/description/index
-    include _partials/map/index
-    include _partials/developments/index
-    
     +description(description.title, description.content, description.blockList)
+    include _partials/map/index
     +developments(developments.title, developments.list, true)

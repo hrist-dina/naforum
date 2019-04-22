@@ -1,0 +1,20 @@
+mixin card(title, list, showAll=false, pagination=false)
+    section.card
+        .container
+            if title
+                .section__title=title
+            ul.card__list
+                for item in list
+                    li.card__item
+                        .card__img
+                            img(src=item.img alt="")
+                        .card__name
+                            a(href="#")=item.name
+                        .card__city=item.city
+
+
+            if showAll
+                .button-link__wrap
+                    a.button-link(href="#") Показать всех
+            if pagination
+                include ../pagination/index
