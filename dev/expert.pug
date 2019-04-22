@@ -3,10 +3,12 @@ block content
     include _data/expert-event
     include _partials/description/index
     include _partials/developments/index
+    include _partials/comment/index
     include _partials/banner/index
 
     include _partials/expert-info/index
     +description(description.title, description.content, description.blockList)
     +developments(developments.title, developments.list, true)
     include _partials/expert-column/index
-    +banner(banner)
+    +comment(comment.title, false, comment.list, false)
+    +banner(banner, true)

@@ -1,5 +1,5 @@
-mixin banner(list)
-    section.banner
+mixin banner(list, whiteBg=false)
+    section.banner(class=whiteBg ? "banner_white-bg" : "")
         .container
             .banner__list
             each item in list

@@ -1,16 +1,17 @@
-extends _layouts/home	
+extends _layouts/pages
 block content
-        include _data/index
-        include _partials/developments/index
-        include _partials/banner/index
+    .container
+        ul
+            li
+                a(href="home.html") Главная
+            li
+                a(href="card-event.html") Карточка события
+            li
+                a(href="expert.html") Эксперт
+            li
+                a(href="location.html") Место мероприятия
+            li
+                a(href="organizer.html") Организатор
 
-        include _partials/calendar/index
-        include _partials/master-class/index
-        +developments(developments.title, developments.list)
-        include _partials/slider-expert/index
-        include _partials/rating/index
-        include _partials/event-organizer/index
-        include _partials/promotion/index
-        include _partials/slider-places/index
-        +banner(banner)
-        
+            li
+                a(href="contacts.html") Контакты

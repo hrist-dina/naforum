@@ -32,6 +32,12 @@ body {
     margin: 0 auto;
 }
 
+.h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: @midnight-express;
+}
+
 .section {
     &__title {
         font-weight: 900;
@@ -52,6 +58,7 @@ body {
 }
 
 .button {
+    display: inline-block;
     padding: 15px;
     background: @cerise;
     color: @white;
@@ -59,6 +66,13 @@ body {
     font-size: 14px;
     font-weight: normal;
     text-align: center;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    &__wrap {
+        text-align: center;
+    }
 }
 
 .button-link {
@@ -86,6 +100,28 @@ body {
     font-weight: 500;
     display: inline-block;
     padding: 10px 40px;
+}
+
+.back-page {
+    .fa-icon;
+    .fal;
+    font-size: 14px;
+    line-height: normal;
+    color: @white;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    text-decoration: none;
+
+    & span {
+        font-family: HelveticaNeueCyr;
+    }
+
+    &::before {
+        content: @fa-var-arrow-left;
+        margin-right: 7px;
+    }
+
 }
 
 .auth {

@@ -3,6 +3,7 @@ block content
     include _data/card-event
     include _partials/description/index
     include _partials/developments/index
+    include _partials/comment/index
     include _partials/banner/index
 
     include _partials/event-master-class/index
@@ -13,7 +14,8 @@ block content
     include _partials/event-schedule/index
     include _partials/event-slider/index
     include _partials/event-participate/index
-    include _partials/comment/index
+    include _partials/map/index
+    +comment(comment.title, true, comment.list, true)
     +developments(developments.title, developments.list, true)
     +banner(banner)
     
