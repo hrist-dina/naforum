@@ -1,0 +1,16 @@
+section.contacts-form
+    .container
+        .contacts-form__description Оставьте сообщение
+        form.contacts-form(action="" method="POST")
+            label.contacts-form__label
+                input.contacts-form__input-text(name="name" type="text" placeholder="Ваше имя")
+            label.contacts-form__label
+                input.contacts-form__input-text(name="email" data-tooltip-type="email" type="text" placeholder="Email")
+            label.contacts-form__label
+                input.contacts-form__input-text(name="phone" data-tooltip-type="phone" type="text" placeholder="Контактный телефон")
+            label.contacts-form__label
+                textarea.contacts-form__textarea(name="message" placeholder="Сообщение")
+            label.contacts-form__label_checkbox
+                input.contacts-form__input-checkbox(name="agree" type="checkbox")
+                span.contacts-form__label-text    Я согласен с условиями обработки персональных данных
+            .button.contacts-form__button(type="submit")  Отправить сообщение

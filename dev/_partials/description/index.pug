@@ -1,0 +1,19 @@
+mixin description(title, content, blockList)
+    section.description
+        .container
+            .section__title=title
+            .description__content
+                for item in content
+                    p=item
+            if blockList
+                .description__block-list
+                    for block in blockList
+                        .description__block
+                            .description__block-top
+                                .description__block-number 
+                                    if block.sign 
+                                        span=block.sign 
+                                    =block.number
+                                .description__block-title=block.title
+                            .description__block-text=block.text
+
