@@ -1,11 +1,13 @@
 extends _layouts/home	
 block content
         include _data/home
+        include _partials/calendar/index
+
         include _partials/developments/index
         include _partials/banner/index
         include _partials/rating/index
 
-        include _partials/calendar/index
+        +calendar(calendar.date, calendar.dayList)
         include _partials/master-class/index
         +developments(developments.title, developments.list)
         include _partials/slider-expert/index

@@ -1,43 +1,119 @@
 .calendar {
-    height: 121px;
+    padding-top: 20px;
     background: @bunting;
 
-    &-top {
+    &__top {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        margin-bottom: 25px;
 
     }
-    &-date {
+
+    &__date {
+        display: flex;
+        align-items: center;
+    }
+
+    &__month {
         font-size: 20px;
-        //font-family: HelveticaNeueCyr;
         color: @white;
+        margin: 0 10px;
     }
 
-    &-expand {
+    &__expand {
         position: relative;
         font-size: 14px;
-        //font-family: HelveticaNeueCyr;
         color: @white;
+        padding-right: 20px;
 
         &::before {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 5px;
-            transform: matrix(1, 0, 0, -1, 0, 0);
+            right: 0;
+            top: 50%;
+            margin-top: -5px;
             background-repeat: no-repeat;
+            border: 6px solid transparent;	border-top: 5px solid @white;
+        }
+
+        &.active::before {
+            transform: rotate(180deg);
+            top: auto;
+            margin: auto;
         }
     }
 
-    &-number {
+    &__day {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        position: relative;
         font-size: 14px;
         color: @white;
-        //font-family: HelveticaNeueCyr;
+        text-decoration: none;
+
+        &:last-child {
+            margin-right: 15px;
+        }
+
+        &.active {
+            border-bottom: 3px solid #EE3769;
+        }
+
+        &-list {
+            display: flex;
+            min-width: 100%;
+            min-height: 54px;
+            overflow-x: auto;
+            box-sizing: border-box;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &-event {
+            list-style-type: none;
+            position: relative;
+            right: -20px;
+
+            & li {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                margin-bottom: 2px;
+            }
+        }
     }
 
-    &-bottom {
+    &__bottom {
         display: flex;
         justify-content: space-between;
-        padding-top: 40px;
     }
+
+    &__prev,
+    &__next {
+        .fa-icon;
+        .far;
+    }
+
+    &__prev,
+    &__next {
+        font-size: 16px;
+        color: @white;
+        text-decoration: none;
+    }
+
+    &__prev::before {
+        content: @fa-var-chevron-left;
+    }
+
+    &__next::before {
+        content: @fa-var-chevron-right;
+    }
+
+
 }
