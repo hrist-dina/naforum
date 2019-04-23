@@ -2,6 +2,10 @@
     padding-top: 20px;
     background: @bunting;
 
+    &.active {
+        min-height: 100%;
+    }
+
     &__top {
         display: flex;
         justify-content: space-between;
@@ -20,44 +24,66 @@
         margin: 0 10px;
     }
 
-    &__expand {
+    &__expand,
+    &__roll-up {
         position: relative;
         font-size: 14px;
         color: @white;
         padding-right: 20px;
 
+        }
+
+    &__expand::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -3px;
+        background-repeat: no-repeat;
+        border: 6px solid transparent;	border-top: 5px solid @white;
+    }
+
+
+    &__roll-up {
+        display: none;
         &::before {
             content: '';
             position: absolute;
             right: 0;
             top: 50%;
-            margin-top: -5px;
+            margin-top: -10px;
             background-repeat: no-repeat;
-            border: 6px solid transparent;	border-top: 5px solid @white;
-        }
-
-        &.active::before {
-            transform: rotate(180deg);
-            top: auto;
-            margin: auto;
+            border: 6px solid transparent;	border-bottom: 5px solid @white;
         }
     }
 
-    &__day {
+    &__controll.hide >  &__expand{
+        display: none;
+    }
+
+    &__controll.hide >  &__roll-up{
+        display: block;
+    }
+
+    &__row {
+        display: flex;
+    }
+
+
+    &__day,
+    &__day-week{
+        box-sizing: border-box;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 54px;
-        height: 54px;
-        min-width: 54px;
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
         position: relative;
         font-size: 14px;
         color: @white;
         text-decoration: none;
 
-        &:last-child {
-            margin-right: 15px;
-        }
 
         &.active {
             border-bottom: 3px solid #EE3769;
@@ -66,7 +92,7 @@
         &-list {
             display: flex;
             min-width: 100%;
-            min-height: 54px;
+            min-height: 52px;
             overflow-x: auto;
             box-sizing: border-box;
 
@@ -77,8 +103,8 @@
 
         &-event {
             list-style-type: none;
-            position: relative;
-            right: -20px;
+            position: absolute;
+            right: 3px;
 
             & li {
                 width: 4px;
@@ -89,9 +115,18 @@
         }
     }
 
+    &__block .active {
+        border: 2px solid #EE3769;
+    }
+
+
     &__bottom {
         display: flex;
         justify-content: space-between;
+
+        &.hide {
+            display: none;
+        }
     }
 
     &__prev,
@@ -116,4 +151,37 @@
     }
 
 
+
+    &__wrap {
+        display: none;
+        background-color: #313443;
+        padding-bottom: 20px;
+        min-height: 100%;
+    }
+
+    &.active &__wrap {
+        display: block;
+    }
+
+
+
+    & .select {
+        & option {
+            color: @bunting;
+        }
+
+        &-tag {
+            background-image: url('../img/arrow-down-white.svg');
+            background-color: @bunting;
+            border-color: @white;
+            color: @white;
+
+            &:focus {
+                background-image: url('../img/arrow-white.svg');
+            }
+        }
+        &-label {
+            color: @white;
+        }
+    }
 }

@@ -32,19 +32,14 @@ $(document).ready(function() {
         variableWidth: true
     });
 
-    /*var map;
-    DG.then(function() {
-        map = DG.map("js-event-map", {
-            center: [54.98, 82.89],
-            zoom: 13
-        });
+    $(".js-calendar-show").on('click', function () {
+        $(this).toggleClass("hide");
+        $('.js-calendar').toggleClass("active");
+        $('.js-calendar-scroll').toggleClass("hide");
+    });
 
-        var mapIcon = DG.divIcon({
-            className: "map-balloon",
-            iconSize: [52, 53]
-        });
-        DG.marker([54.98, 82.89], {icon: mapIcon}).addTo(map);
-    });*/
+
+
 
     if ($("#js-map").length) {
         ymaps.ready(init);

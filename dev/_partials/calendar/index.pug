@@ -1,19 +1,50 @@
+include data
+
+include ../select/index
+
+mixin day(day)
+    a(href="#", class='calendar__day', class=day.active ? 'active' : '')
+        span=day.number
+        ul.calendar__day-event
+            for event in day.event
+                li(class=event)
+
+
 mixin calendar(date, dayList)
-    .calendar
+    .calendar.js-calendar
         .container
             .calendar__top
                 .calendar__date
                     a(href="#").calendar__prev
                     .calendar__month=date
                     a(href="#").calendar__next
-                .calendar__expand Развернуть
-        .calendar__bottom
+                .calendar__controll.js-calendar-show
+                    span.calendar__expand Развернуть
+                    span.calendar__roll-up Свернуть
+        .calendar__bottom.js-calendar-scroll
             .calendar__day-list
                 for day in dayList
-                    a(class=day.active ? 'active' : '' href="#")
-                        span=day.number
-                        ul.calendar__day-event
-                            for event in day.event
-                                li(class=event)
+                    +day(day)
 
-//a(href="#").calendar__day(class=day.active ? 'active' : '')
+        .calendar__wrap.js-calendar-wrap
+            +select(select.options, select.label)
+            .calendar__block
+                .calendar__row
+                    .calendar__day-week Пн
+                    .calendar__day-week Вт
+                    .calendar__day-week Ср
+                    .calendar__day-week Чт
+                    .calendar__day-week Пт
+                    .calendar__day-week Сб
+                    .calendar__day-week Вс
+                <div class='calendar__row'>
+                    for day, key in dayList
+                        if key % 7 === 0
+                            </div><div class='calendar__row'>
+                        +day(day)
+
+
+
+
+
+
