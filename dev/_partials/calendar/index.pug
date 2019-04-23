@@ -10,9 +10,10 @@ mixin calendar(date, dayList)
         .calendar__bottom
             .calendar__day-list
                 for day in dayList
-                    a(href="#").calendar__day(class=day.active ? 'active' : '')
+                    a(class=day.active ? 'active' : '' href="#")
                         span=day.number
                         ul.calendar__day-event
                             for event in day.event
                                 li(class=event)
 
+//a(href="#").calendar__day(class=day.active ? 'active' : '')
