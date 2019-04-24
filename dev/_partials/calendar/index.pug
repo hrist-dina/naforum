@@ -2,12 +2,16 @@ include data
 
 include ../select/index
 
-mixin day(day)
-    a(href="#", class='calendar__day', class=day.active ? 'active' : '')
-        span=day.number
-        ul.calendar__day-event
-            for event in day.event
-                li(class=event)
+mixin day(day, hasEmpty=false)
+    if !hasEmpty || day.number
+        if !day.number
+            span.calendar__day
+        else
+            a(href="#", class='calendar__day', class=day.active ? 'active' : '')
+                span=day.number
+                ul.calendar__day-event
+                    for event in day.event
+                        li(class=event)
 
 
 mixin calendar(date, dayList)
@@ -24,7 +28,7 @@ mixin calendar(date, dayList)
         .calendar__bottom.js-calendar-scroll
             .calendar__day-list
                 for day in dayList
-                    +day(day)
+                    +day(day, true)
 
         .calendar__wrap.js-calendar-wrap
             +select(select.options, select.label)
@@ -42,6 +46,17 @@ mixin calendar(date, dayList)
                         if key % 7 === 0
                             </div><div class='calendar__row'>
                         +day(day)
+        .container
+            .calendar__filter-wrap
+                .calendar__title Выберите направление
+                .calendar__filter-list
+                    label
+                        input(type='checkbox').calendar__filter-item.yellow
+                        | Менеджмент
+                    label
+                        input(type='checkbox').calendar__filter-item.orange
+                        | Маркетинг
+
 
 
 

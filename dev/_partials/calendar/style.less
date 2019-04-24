@@ -30,6 +30,7 @@
         font-size: 14px;
         color: @white;
         padding-right: 20px;
+        cursor: pointer;
 
         }
 
@@ -115,9 +116,15 @@
         }
     }
 
-    &__block .active {
-        border: 2px solid #EE3769;
+    &__block {
+        border-bottom: 1px solid #7E7E7E;
+
+        & .active {
+            border: 2px solid #EE3769;
+        }
+
     }
+
 
 
     &__bottom {
