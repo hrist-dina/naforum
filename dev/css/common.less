@@ -270,3 +270,38 @@ body {
         }
     }
 }
+
+.input-checkbox,
+.input-checkbox-color {
+
+    & input {
+        display: none;
+
+        &:checked ~ span:before {
+            content: @fa-var-check-square;
+        }
+    }
+
+    & span {
+
+        position: relative;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 25px;
+        background: none;
+
+        &::before {
+            .fa-icon;
+            content: @fa-var-square;
+            position: absolute;
+            left: 0;
+        }
+
+    }
+}
+.input-checkbox span::before {
+    .far;
+}
+.input-checkbox-color span::before {
+    .fas;
+}
