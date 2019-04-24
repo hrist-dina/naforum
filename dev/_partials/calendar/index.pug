@@ -14,49 +14,57 @@ mixin day(day, hasEmpty=false)
                         li(class=event)
 
 
-mixin calendar(date, dayList)
+mixin calendar(date, dayList, checkboxList)
     .calendar.js-calendar
-        .container
-            .calendar__top
-                .calendar__date
-                    a(href="#").calendar__prev
-                    .calendar__month=date
-                    a(href="#").calendar__next
-                .calendar__controll.js-calendar-show
-                    span.calendar__expand Развернуть
-                    span.calendar__roll-up Свернуть
-        .calendar__bottom.js-calendar-scroll
-            .calendar__day-list
-                for day in dayList
-                    +day(day, true)
+        form
+            .container
+                .calendar__top
+                    .calendar__date
+                        a(href="#").calendar__prev
+                        .calendar__month=date
+                        a(href="#").calendar__next
+                    .calendar__controll.js-calendar-show
+                        span.calendar__expand Развернуть
+                        span.calendar__roll-up Свернуть
+            .calendar__bottom.js-calendar-scroll
+                .calendar__day-list
+                    for day in dayList
+                        +day(day, true)
 
-        .calendar__wrap.js-calendar-wrap
-            +select(select.options, select.label)
-            .calendar__block
-                .calendar__row
-                    .calendar__day-week Пн
-                    .calendar__day-week Вт
-                    .calendar__day-week Ср
-                    .calendar__day-week Чт
-                    .calendar__day-week Пт
-                    .calendar__day-week Сб
-                    .calendar__day-week Вс
-                <div class='calendar__row'>
-                    for day, key in dayList
-                        if key % 7 === 0
-                            </div><div class='calendar__row'>
-                        +day(day)
-        .container
-            .calendar__filter-wrap
-                .calendar__title Выберите направление
-                .calendar__filter-list
-                    label
-                        input(type='checkbox').calendar__filter-item.yellow
-                        | Менеджмент
-                    label
-                        input(type='checkbox').calendar__filter-item.orange
-                        | Маркетинг
-
+            .calendar__wrap.js-calendar-wrap
+                +select(select.options, select.label)
+                .calendar__block
+                    .calendar__row
+                        .calendar__day-week Пн
+                        .calendar__day-week Вт
+                        .calendar__day-week Ср
+                        .calendar__day-week Чт
+                        .calendar__day-week Пт
+                        .calendar__day-week Сб
+                        .calendar__day-week Вс
+                    <div class='calendar__row'>
+                        for day, key in dayList
+                            if key % 7 === 0
+                                </div><div class='calendar__row'>
+                            +day(day)
+                    </div>
+                .container
+                    .calendar__filter-wrap
+                        .calendar__title Выберите направление
+                        ul.calendar__filter-list
+                            for item in checkboxList.direction
+                                li
+                                    label.input-checkbox-color
+                                        input(id='checkbox-' + item.color, type='checkbox')
+                                        span(class=item.color)=item.label
+                        .calendar__title.calendar__mt-30 Выберите тип
+                        ul.calendar__filter-list
+                            for item in checkboxList.type
+                                li
+                                    label.input-checkbox
+                                        input(type='checkbox')
+                                        span=item.label
+                    button(type='submit', class='button calendar__mt-30') Применить
 
 
 

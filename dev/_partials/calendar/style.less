@@ -77,9 +77,9 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 52px;
+        width: ~"calc(100% / 7)";
         height: 52px;
-        min-width: 52px;
+        min-width: ~"calc(100% / 7)";
         position: relative;
         font-size: 14px;
         color: @white;
@@ -191,4 +191,76 @@
             color: @white;
         }
     }
+
+
+
+    &__title {
+        font-weight: 500;
+        font-size: 19px;
+        color: @white;
+    }
+
+
+    &__filter {
+
+        &-wrap {
+            padding-top: 20px;
+        }
+
+        &-list {
+            list-style-type: none;
+            padding-top: 20px;
+
+            & > li {
+                margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 18px;
+                color: @white;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__mt-30 {
+        margin-top: 30px;
+    }
+
+}
+
+.input-checkbox,
+.input-checkbox-color {
+
+    & input {
+        display: none;
+
+        &:checked ~ span:before {
+            content: @fa-var-check-square;
+        }
+    }
+
+    & span {
+
+        position: relative;
+        font-size: 14px;
+        line-height: 18px;
+        color: @white;
+        padding-left: 25px;
+        background: none;
+
+        &::before {
+            .fa-icon;
+            content: @fa-var-square;
+            position: absolute;
+            left: 0;
+        }
+
+    }
+}
+.input-checkbox span::before {
+    .far;
+}
+.input-checkbox-color span::before {
+    .fas;
 }

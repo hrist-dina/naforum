@@ -28,26 +28,55 @@ body {
 @purple-dark: #2a0845;
 
 .yellow {
+    &::before,
+    &::after {
+        color: #F2C94C;
+    }
+
     background-color: #F2C94C;
 }
 
 .orange {
+    &::before,
+    &::after {
+        color: #F2994A;
+    }
+
     background-color: #F2994A;
 }
 
 .green {
+    &::before,
+    &::after {
+        color: #6FCF97;
+    }
+
     background-color: #6FCF97;
 }
 
 .skyblue {
+    &::before,
+    &::after {
+        color: #74C5FF;
+    }
+
     background-color: #74C5FF;
 }
 
 .blue {
+    &::before,
+    &::after {
+        color: #2F80ED;
+    }
+
     background-color: #2F80ED;
 }
 
 .purple {
+    &::before,
+    &::after {
+        color: #9B51E0;
+    }
     background-color: #9B51E0;
 }
 
@@ -95,6 +124,8 @@ body {
     text-decoration: none;
     width: 100%;
     box-sizing: border-box;
+    border: none;
+    outline: none;
 
     &__wrap {
         text-align: center;

@@ -153,7 +153,7 @@
 
         &__banner {
             margin-top: 40px;
-            max-width: 345px;
+            //max-width: 345px;
 
             & img {
                 width: 100%;
@@ -176,6 +176,7 @@
                 rgba(0, 0, 0, 0.15));
 
             background-repeat: no-repeat;
+            background-size: cover
         }
 
         &__inner {
@@ -188,17 +189,19 @@
         }
 
         &__tags {
-            display: inline-block;
-            text-align: center;
-            padding: 3px;
-            margin-top: 8px;
-            margin-right: 8px;
-            min-width: 111px;
             list-style-type: none;
-            background-color: @cerise;
-            color: @white;
-            font-weight: normal;
-            font-size: 14px;
+            & li {
+                display: inline-block;
+                text-align: center;
+                padding: 3px;
+                margin-top: 8px;
+                margin-right: 8px;
+                min-width: 111px;
+                background-color: @cerise;
+                color: @white;
+                font-weight: normal;
+                font-size: 14px;
+            }
         }
 
         &__title {
