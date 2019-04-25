@@ -4,23 +4,31 @@
     background: #f0f0f2;
 
     &__inner {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 
         &:last-child {
             margin-bottom: 0;
         }
     }
 
-    &__row {
-        // display: flex;
-    }
-
     &__text {
+        position: relative;
         margin-right: 10px;
         font-weight: normal;
         font-size: 14px;
         line-height: 18px;
         color: #9a9a9e;
+        padding-left: 22px;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            color: @purple-light;
+            top: 0;
+            bottom: 0;
+            right: auto;
+            margin: auto;
+        }
     }
 
     &__content {

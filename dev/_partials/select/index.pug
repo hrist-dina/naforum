@@ -4,6 +4,6 @@ mixin select(options, label=false)
             .select-wrap
                 if label
                     label(for='sort').select-label=label
-                select(name='sort', id='sort').select-tag
+                select(name='sort', id='sort').select-tag.js-select2
                     for item, key in options
                         option(value=item, selected=key==0 ? true : false)=item

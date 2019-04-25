@@ -1,22 +1,9 @@
-section.column
-    .container
-        .section__title Колонка эксперта
-        ul.column__list
+mixin column(list)
+    ul.column__list
+        for item in list
             li.column__item
-                .column__name
-                        | Максим Батырев
+                .column__name=item.name
                 .column__article
-                    a.column__link(href="#")
-                        |«Копить нужно то, что невозможно отобрать»
+                    a.column__link(href="#")=item.text
                     .column__comments
-                        span 2
-            li.column__item
-                .column__name
-                        | Максим Батырев
-                .column__article
-                    a.column__link(href="#")
-                        |«Копить нужно то, что невозможно отобрать»
-                    .column__comments
-                        span 2
-        .button-link__wrap
-            a.button-link(href="#") Показать все
+                        span=item.comment

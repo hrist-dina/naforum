@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    $('.js-select2').select2({
+        minimumResultsForSearch: Infinity
+    });
+
     $(".js-hamburger").on("click", function() {
         $(this).toggleClass("is-active");
         $(".js-mobile-menu").toggleClass("mobile-menu_active");

@@ -28,6 +28,7 @@ body {
 @purple-dark: #2a0845;
 
 .yellow {
+
     &::before,
     &::after {
         color: #F2C94C;
@@ -37,6 +38,7 @@ body {
 }
 
 .orange {
+
     &::before,
     &::after {
         color: #F2994A;
@@ -46,6 +48,7 @@ body {
 }
 
 .green {
+
     &::before,
     &::after {
         color: #6FCF97;
@@ -55,6 +58,7 @@ body {
 }
 
 .skyblue {
+
     &::before,
     &::after {
         color: #74C5FF;
@@ -64,6 +68,7 @@ body {
 }
 
 .blue {
+
     &::before,
     &::after {
         color: #2F80ED;
@@ -73,10 +78,12 @@ body {
 }
 
 .purple {
+
     &::before,
     &::after {
         color: #9B51E0;
     }
+
     background-color: #9B51E0;
 }
 
@@ -277,7 +284,7 @@ body {
     & input {
         display: none;
 
-        &:checked ~ span:before {
+        &:checked~span:before {
             content: @fa-var-check-square;
         }
     }
@@ -299,9 +306,33 @@ body {
 
     }
 }
+
 .input-checkbox span::before {
     .far;
 }
+
 .input-checkbox-color span::before {
     .fas;
+}
+
+.icon-phone,
+.icon-mail,
+.icon-map-marker {
+    &::before {
+        .fa-icon;
+        .fal;
+        font-size: 15px;
+    }
+}
+
+.icon-phone::before {
+    content: @fa-var-phone;
+}
+
+.icon-mail::before {
+    content: @fa-var-envelope-open;
+}
+
+.icon-map-marker::before {
+    content: @fa-var-map-marker-alt;
 }
