@@ -1,3 +1,11 @@
 extends _layouts/home	
 block content
+    include _partials/select/index
+    include _partials/title/index
+    include _partials/banner/index
     include _partials/sponsor-all/index
+    include _data/sponsor
+
+    +title('Организаторы')
+    +select(select, 'Ваш город')
+    +banner(banner, true)
