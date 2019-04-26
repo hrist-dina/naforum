@@ -1,7 +1,8 @@
 mixin description(title, content, blockList)
     section.description
         .container
-            .section__title=title
+            if (title)
+                .section__title=title
             .description__content
                 for item in content
                     p=item

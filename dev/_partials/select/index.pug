@@ -1,9 +1,9 @@
-mixin select(options, label=false)
+mixin select(options, jsClass=false, label=false)
     section.select
         .container
             .select-wrap
                 if label
                     label(for='sort').select-label=label
-                select(name='sort', id='sort').select-tag.js-select2
+                select(name='sort', id='sort', class=jsClass ? jsClass : '').select-tag
                     for item, key in options
                         option(value=item, selected=key==0 ? true : false)=item

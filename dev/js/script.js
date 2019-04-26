@@ -1,6 +1,12 @@
 $(document).ready(function() {
-    $('.js-select2').select2({
-        minimumResultsForSearch: Infinity
+    $('.js-select2-purple').select2({
+        minimumResultsForSearch: Infinity,
+        theme: 'naforum-purple',
+    });
+
+    $('.js-select2-bunting').select2({
+        minimumResultsForSearch: Infinity,
+        theme: 'naforum-bunting',
     });
 
     $(".js-hamburger").on("click", function() {
