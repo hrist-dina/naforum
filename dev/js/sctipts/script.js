@@ -1,4 +1,15 @@
+import Validator from './Validator'
+import $ from  'jquery'
+
 $(document).ready(function() {
+    let contactForm = new Validator('.js-contact-form');
+    contactForm.validateAgree();
+    $('.js-contact-form').on('submit', function (e) {
+        e.preventDefault();
+        contactForm.init();
+    });
+
+
     $('.js-select2-purple').select2({
         minimumResultsForSearch: Infinity,
         theme: 'naforum-purple',

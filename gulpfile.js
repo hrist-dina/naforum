@@ -9,6 +9,7 @@ const browserSync = require('browser-sync').create();
 const rimraf = require('rimraf');
 const pug = require('gulp-pug');
 const plumber = require('gulp-plumber');
+const webpack = require('webpack-stream');
 
 const ENV = {
 	dev: $.environments.development,
@@ -36,22 +37,47 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest('./public/css/'))
 });
 
-gulp.task('libs', () => {
+/*gulp.task('libs', () => {
 	return gulp.src('./dev/js/libs.js')
 		.pipe(fileinclude('@@'))
 		.pipe($.uglify())
 		.pipe(gulp.dest('./public/js/'))
-});
+});*/
 
 gulp.task('scripts', () => {
-	return gulp.src(['./dev/js/*.js', '!./dev/js/libs.js'])
+	return gulp.src('./dev/js/main.js')
+		.pipe(webpack(
+			{
+				output: {
+					filename: 'script.js',
+				},
+				devtool: "source-map",
+				module: {
+					rules: [
+						{
+							test: /\.(js)$/,
+							exclude: /(node_modules)/,
+							loader: 'babel-loader',
+							query: {
+								presets: ['env']
+							}
+						}
+					]
+				},
+				externals: {
+					$: 'jquery',
+					jQuery: 'jquery',
+					'window.jQuery': 'jquery'
+				}
+			}
+		))
 		.pipe(ENV.dev($.sourcemaps.init()))
-		.pipe($.babel({
-			presets: ['env'],
-			plugins: ['transform-object-rest-spread']
-		}))
+		// .pipe($.babel({
+		// 	presets: ['env'],
+		// 	plugins: ['transform-object-rest-spread']
+		// }))
 		// .pipe($.uglify())
-		.pipe(ENV.dev($.sourcemaps.write()))
+		//.pipe(ENV.dev($.sourcemaps.write()))
 		.pipe(gulp.dest('./public/js/'))
 });
 
@@ -108,7 +134,7 @@ gulp.task('clean', (cb) => {
 gulp.task('build', [
 	'html',
 	'styles',
-	'libs',
+	//'libs',
 	'scripts',
 	'img',
 	'pictures',
@@ -128,10 +154,10 @@ gulp.task('watch', () => {
 		browserSync.reload();
 	});
 
-	$.watch(['dev/js/vendor/*.*', 'dev/js/libs.js'], function() {
-		gulp.start('libs');
-		browserSync.reload();
-	});
+	// $.watch(['dev/js/vendor/*.*', 'dev/js/libs.js'], function() {
+	// 	gulp.start('libs');
+	// 	browserSync.reload();
+	// });
 
 	$.watch(['dev/js/**/*.js', '!dev/js/libs.js'], function() {
 		gulp.start('scripts');
