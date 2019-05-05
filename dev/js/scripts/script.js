@@ -1,6 +1,5 @@
 import Validator from './Validator'
-import $ from  'jquery'
-
+import Calendar from  './Calendar'
 $(document).ready(function() {
     let contactForm = new Validator('.js-contact-form');
     contactForm.validateAgree();
@@ -8,6 +7,70 @@ $(document).ready(function() {
         e.preventDefault();
         contactForm.init();
     });
+
+
+    let dates = [{
+        year: 2019,
+        months: [
+            {
+                number: 4,
+                days: [
+                    {
+                        number: 2,
+                        events: [
+                            'orange',
+                            'green',
+                            'skyblue',
+                            'purple'
+                        ]
+                    },
+                    {
+                        number: 5,
+                        events: [
+                            'orange',
+                            'green',
+                            'skyblue',
+                            'purple'
+                        ]
+                    },
+
+                ]
+            },
+            {
+                number: 5,
+                days: [
+                    {
+                        number: 10,
+                        events: [
+                            'orange',
+                            'green',
+                            'skyblue',
+                            'purple'
+                        ]
+                    },
+                    {
+                        number: 15,
+                        events: [
+                            'orange',
+                            'green',
+                            'skyblue',
+                            'purple'
+                        ]
+                    },
+
+                ]
+            }
+        ]
+    }];
+
+    let calendar = new Calendar('.js-datepicker', dates);
+    $(".js-calendar-show").on('click', function () {
+        $(this).toggleClass("hide");
+        $('.js-calendar').toggleClass("active");
+        calendar.initSwipe()
+
+    });
+
 
 
     $('.js-select2-purple').select2({
@@ -27,6 +90,7 @@ $(document).ready(function() {
     });
 
     $(".js-slider-expert").slick({
+        rows: 0,
         arrows: false,
         infinite: false,
         dots: true,
@@ -36,6 +100,7 @@ $(document).ready(function() {
     });
 
     $(".js-slider-places").slick({
+        rows: 0,
         arrows: false,
         infinite: false,
         dots: true,
@@ -45,6 +110,7 @@ $(document).ready(function() {
     });
 
     $(".js-event-slider").slick({
+        rows: 0,
         arrows: false,
         infinite: false,
         dots: false,
@@ -52,13 +118,6 @@ $(document).ready(function() {
         slidesToScroll: 1,
         variableWidth: true
     });
-
-    $(".js-calendar-show").on('click', function () {
-        $(this).toggleClass("hide");
-        $('.js-calendar').toggleClass("active");
-        $('.js-calendar-scroll').toggleClass("hide");
-    });
-
 
 
 

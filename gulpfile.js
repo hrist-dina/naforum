@@ -9,7 +9,8 @@ const browserSync = require('browser-sync').create();
 const rimraf = require('rimraf');
 const pug = require('gulp-pug');
 const plumber = require('gulp-plumber');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
 
 const ENV = {
 	dev: $.environments.development,
@@ -46,7 +47,7 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
 	return gulp.src('./dev/js/main.js')
-		.pipe(webpack(
+		.pipe(webpackStream(
 			{
 				output: {
 					filename: 'script.js',
@@ -64,11 +65,17 @@ gulp.task('scripts', () => {
 						}
 					]
 				},
-				externals: {
-					$: 'jquery',
-					jQuery: 'jquery',
-					'window.jQuery': 'jquery'
-				}
+				// externals: {
+				// 	$: 'jquery',
+				// 	jQuery: 'jquery',
+				// 	'window.jQuery': 'jquery'
+				// },
+				plugins: [
+					new webpack.ProvidePlugin({
+						$: 'jquery',
+						jQuery: 'jquery'
+					})
+				]
 			}
 		))
 		.pipe(ENV.dev($.sourcemaps.init()))

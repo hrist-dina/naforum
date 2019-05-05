@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 export default class Validator {
     constructor(selectorForm) {
         this.selectorForm = selectorForm;

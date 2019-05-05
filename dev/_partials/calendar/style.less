@@ -1,3 +1,171 @@
+.datepicker {
+    background: @bunting;
+
+    &--nav {
+        display: none;
+    }
+
+    &--cells {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &--cell,
+    &--day-name {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        z-index: 1;
+        height: 52px;
+        font-size: 14px;
+        color: @white;
+        text-decoration: none;
+        border: 2px solid transparent;
+
+        width: 14.28571%;
+    }
+
+    &--days-names {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: 8px 0 3px;
+    }
+
+    &--day-name {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+.datepicker--cell-day.-other-month-,
+.datepicker--cell-year.-other-decade- {
+    color: #dedede;
+    opacity: .5;
+}
+.datepicker--cell-day.-other-month-:hover,
+.datepicker--cell-year.-other-decade-:hover {
+    color: #c5c5c5;
+}
+.-disabled-.-focus-.datepicker--cell-day.-other-month-,
+.-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+    color: #dedede;
+}
+.-selected-.datepicker--cell-day.-other-month-,
+.-selected-.datepicker--cell-year.-other-decade- {
+    color: #fff;
+    background: #a2ddf6;
+}
+.-selected-.-focus-.datepicker--cell-day.-other-month-,
+.-selected-.-focus-.datepicker--cell-year.-other-decade- {
+    background: #8ad5f4;
+}
+.-in-range-.datepicker--cell-day.-other-month-,
+.-in-range-.datepicker--cell-year.-other-decade- {
+    background-color: rgba(92, 196, 239, 0.1);
+    color: #cccccc;
+}
+.-in-range-.-focus-.datepicker--cell-day.-other-month-,
+.-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+    background-color: rgba(92, 196, 239, 0.2);
+}
+.datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
+    background: none;
+    border: none; }
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+
+.datepicker--cell.-focus- {
+    border: 2px solid rgba(238, 55, 105, .5);
+}
+.datepicker--cell.-current- {
+    color: #4EB5E6;
+}
+.datepicker--cell.-current-.-focus- {
+    color: @white;
+}
+.datepicker--cell.-current-.-in-range- {
+    color: #4EB5E6;
+}
+.datepicker--cell.-in-range- {
+    background: rgba(92, 196, 239, 0.1);
+    color: #4a4a4a;
+    border-radius: 0;
+}
+.datepicker--cell.-in-range-.-focus- {
+    background-color: rgba(92, 196, 239, 0.2);
+}
+.datepicker--cell.-disabled- {
+    cursor: default;
+    color: #aeaeae;
+}
+.datepicker--cell.-disabled-.-focus- {
+    color: #aeaeae;
+}
+.datepicker--cell.-disabled-.-in-range- {
+    color: #a1a1a1;
+}
+.datepicker--cell.-disabled-.-current-.-focus- {
+    color: #aeaeae;
+}
+.datepicker--cell.-range-from- {
+    border: 1px solid rgba(92, 196, 239, 0.5);
+    background-color: rgba(92, 196, 239, 0.1);
+    border-radius: 4px 0 0 4px;
+}
+.datepicker--cell.-range-to- {
+    border: 1px solid rgba(92, 196, 239, 0.5);
+    background-color: rgba(92, 196, 239, 0.1);
+    border-radius: 0 4px 4px 0;
+}
+.datepicker--cell.-range-from-.-range-to- {
+    border-radius: 4px;
+}
+.datepicker--cell.-selected- {
+    border: 2px solid #EE3769;
+}
+.datepicker--cell.-selected-.-current- {
+    border: 2px solid #EE3769;
+}
+.datepicker--cell.-selected-.-focus- {
+    border: 2px solid #c93664;
+}
+.datepicker--cell:empty {
+    cursor: default;
+}
+
+
+
+
+
+
 .calendar {
     padding-top: 20px;
     background: @bunting;
@@ -5,6 +173,39 @@
     &.active {
         min-height: 100%;
     }
+
+    &:not(.active) {
+
+        & .datepicker--days-names {
+            display: none;
+        }
+
+        & .datepicker--cells {
+            display: flex;
+            flex-wrap: nowrap;
+            min-width: 100%;
+            min-height: 52px;
+            overflow-x: auto;
+            box-sizing: border-box;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+        }
+        & .datepicker--cell {
+            width: 14.28571%;
+            height: 52px;
+            min-width: 14.28571%;
+        }
+
+        & .-other-month- {
+            display: none;
+        }
+
+    }
+
+
 
     &__top {
         display: flex;
@@ -66,11 +267,6 @@
         display: block;
     }
 
-    &__row {
-        display: flex;
-    }
-
-
     &__day,
     &__day-week{
         box-sizing: border-box;
@@ -88,18 +284,6 @@
 
         &.active {
             border-bottom: 3px solid #EE3769;
-        }
-
-        &-list {
-            display: flex;
-            min-width: 100%;
-            min-height: 52px;
-            overflow-x: auto;
-            box-sizing: border-box;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
         }
 
         &-event {
@@ -124,7 +308,6 @@
         }
 
     }
-
 
 
     &__bottom {
@@ -160,19 +343,17 @@
 
 
     &__wrap {
-        display: none;
         background-color: #313443;
-        padding-bottom: 20px;
         min-height: 100%;
     }
 
     &.active &__wrap {
-        display: block;
+        padding-bottom: 20px;
     }
 
 
-
     & .select {
+        display: none;
         & option {
             color: @bunting;
         }
@@ -192,6 +373,9 @@
         }
     }
 
+    &.active .select {
+        display: block;
+    }
 
 
     &__title {
@@ -205,6 +389,7 @@
 
         &-wrap {
             padding-top: 20px;
+            display: none;
         }
 
         &-list {
@@ -223,6 +408,20 @@
             }
         }
     }
+
+    &.active &__filter-wrap {
+        display: block;
+    }
+
+    & .button {
+        display: none;
+
+    }
+
+    &.active .button {
+        display: block;
+    }
+
     &__mt-30 {
         margin-top: 30px;
     }
