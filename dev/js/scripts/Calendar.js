@@ -47,20 +47,21 @@ export default class Calendar {
         };
 
         // Инициализация
-        this.datepicker = $(this.selector).datepicker({
-            inline: true,
-            navTitles: {
-                days: 'MM yyyy'
-            },
-            onRenderCell: this.onRenderCell,
-            // Пробрасываем массив и шаблон в конструктор датапикера, чтобы использовать в методах класса
-            dateEvents: this.dateEvents,
-            eventTemplate: this.eventTemplate
-        }).data('datepicker');
+        if ($(this.selector).length) {
+            this.datepicker = $(this.selector).datepicker({
+                inline: true,
+                navTitles: {
+                    days: 'MM yyyy'
+                },
+                onRenderCell: this.onRenderCell,
+                // Пробрасываем массив и шаблон в конструктор датапикера, чтобы использовать в методах класса
+                dateEvents: this.dateEvents,
+                eventTemplate: this.eventTemplate
+            }).data('datepicker');
 
-        // Инициализируем кастомную навигацию
-        this.initCustomNavigation();
-
+            // Инициализируем кастомную навигацию
+            this.initCustomNavigation();
+        }
 
     }
 
