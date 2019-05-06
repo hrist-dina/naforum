@@ -77,7 +77,8 @@ export default class Validator {
     validateAgree() {
         let that = this;
         this.form.find(`input[data-${this.agreeFiled}`).on('change', function () {
-            if (this.checked) {
+            console.log($(this).is(':checked'));
+            if ($(this).is(':checked')) {
                 that.disabledSubmit(false);
             } else {
                 that.disabledSubmit();

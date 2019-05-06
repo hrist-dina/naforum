@@ -71,16 +71,30 @@ $(document).ready(function() {
 
     });
 
-
-
     $('.js-select2-purple').select2({
         minimumResultsForSearch: Infinity,
         theme: 'naforum-purple',
+        width: 'resolve'
     });
 
     $('.js-select2-bunting').select2({
         minimumResultsForSearch: Infinity,
         theme: 'naforum-bunting',
+        width: 'resolve'
+    });
+
+    $('.js-select2-bunting').on('select2:open', function () {
+        setTimeout(function () {
+            $('ul.select2-results__options').mCustomScrollbar({
+                axis: 'y',
+                scrollbarPosition: 'inside',
+                advanced: {
+                    updateOnContentResize: true
+                },
+                live: true,
+                theme: "minimal"
+            });
+        }, 0);
     });
 
     $(".js-hamburger").on("click", function() {

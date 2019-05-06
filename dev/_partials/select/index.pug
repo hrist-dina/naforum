@@ -6,4 +6,4 @@ mixin select(options, jsClass=false, label=false)
                     label(for='sort').select-label=label
                 select(name='sort', id='sort', class=jsClass ? jsClass : '').select-tag
                     for item, key in options
-                        option(value=item, selected=key==0 ? true : false)=item
+                        option(value=item)=item
