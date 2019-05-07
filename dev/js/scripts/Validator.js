@@ -35,11 +35,13 @@ export default class Validator {
     }
 
     validate() {
+        let error = 0;
         this.fields.map((key, item) => {
             let value = $(item).val();
 
             if ($(item).data(this.requireFiled) === true && this.constructor.checkEmpty(value)) {
                 this.showErrorMessage(item, this.massages.required);
+                error = 1;
             }
 
             if (!this.constructor.checkEmpty(value)) {
@@ -47,11 +49,13 @@ export default class Validator {
                     case 'email':
                         if (this.constructor.checkEmail(value)) {
                             this.showErrorMessage(item, this.massages.email);
+                            error = 1
                         }
                         break;
                     case 'phone':
                         if (this.constructor.checkPhone(value)) {
                             this.showErrorMessage(item, this.massages.phone);
+                            error = 1
                         }
                         break;
                     default:
@@ -60,6 +64,8 @@ export default class Validator {
             }
 
         });
+
+        return error;
     }
 
     static checkEmpty(string) {
@@ -88,6 +94,6 @@ export default class Validator {
 
     init() {
         this.removeErrorMessages();
-        this.validate();
+        return this.validate();
     }
 }

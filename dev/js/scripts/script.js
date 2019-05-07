@@ -1,13 +1,18 @@
 import Validator from './Validator'
 import Calendar from  './Calendar'
+import Inputmask from 'inputmask/dist/inputmask/inputmask.numeric.extensions'
 $(document).ready(function() {
     let contactForm = new Validator('.js-contact-form');
     contactForm.validateAgree();
     $('.js-contact-form').on('submit', function (e) {
-        e.preventDefault();
-        contactForm.init();
+        // Если вернулась ошибка, останавливаем отпраку формы
+        if (contactForm.init()) {
+            e.preventDefault();
+        }
     });
 
+    let im = new Inputmask('+7(999)999-99-99');
+    im.mask($('.js-phone-inputmask'));
 
     let dates = [{
         year: 2019,
