@@ -11,6 +11,6 @@ section.contacts-form
             label.contacts-form__label
                 textarea.contacts-form__textarea(name="message" data-validator-require="true" placeholder="Сообщение")
             label.input-checkbox-color
-                input(name="agree" data-validator-agree="true" type="checkbox")
+                input.js-validator-agree(name="agree" type="checkbox")
                 span.contacts-form__label-text Я согласен с условиями обработки персональных данных
             button.button.contacts-form__button(type="submit", disabled=true)  Отправить сообщение

@@ -3,7 +3,7 @@ export default class Validator {
         this.selectorForm = selectorForm;
         this.requireFiled = 'validator-require';
         this.typeFiled = 'validator-type';
-        this.agreeFiled = 'validator-agree';
+        this.slectorAgreeFiled = 'js-validator-agree';
         this.form = $(this.selectorForm);
         this.submitButton = this.form.find('[type=submit]');
         this.selectorError = 'validator-error';
@@ -76,8 +76,8 @@ export default class Validator {
 
     validateAgree() {
         let that = this;
-        this.form.find(`input[data-${this.agreeFiled}`).on('change', function () {
-            console.log($(this).is(':checked'));
+
+        this.form.find(`.${this.slectorAgreeFiled}`).on('change', function () {
             if ($(this).is(':checked')) {
                 that.disabledSubmit(false);
             } else {
