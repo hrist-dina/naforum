@@ -11,8 +11,11 @@ html(lang="en")
         title Document
     body
         include ../_partials/header/index
+        include ../_partials/calendar/index
+        +calendar(calendar.date, calendar.dayList, checkboxList, showCaledar)
 
-        block content
+        .wrapper
+            block content
 
         include ../_partials/footer/index
 

@@ -14,8 +14,8 @@ mixin day(day, hasEmpty=false)
                         li(class=eventDay)
 
 
-mixin calendar(date, dayList, checkboxList)
-    .calendar.js-calendar
+mixin calendar(date, dayList, checkboxList, showCaledar=false)
+    .calendar.js-calendar(class=showCaledar ? 'show' : '')
         form
             .container
                 .calendar__top

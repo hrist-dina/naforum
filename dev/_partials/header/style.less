@@ -1,4 +1,11 @@
 .header {
+    .desktop( {
+        position: fixed;
+        z-index: 50;
+        width: 325px;
+    }
+
+    );
 
     &.mobile-menu_active {
         position: fixed;
@@ -17,6 +24,14 @@
         width: 33%;
     }
 
+    &-left {
+        .desktop( {
+            display: none;
+        }
+
+        );
+    }
+
     &-middle {
         text-align: center;
     }
@@ -29,6 +44,11 @@
         padding: 15px 0;
         background: linear-gradient(146.17deg, #6441A5 0.44%, #2A0845 90.38%);
 
+        .desktop( {
+            background: @bunting;
+        }
+
+        );
     }
 
     &-inner {
@@ -52,6 +72,12 @@
         font-size: 16px;
         color: @white;
         text-decoration: none;
+
+        .desktop( {
+            display: none;
+        }
+
+        );
 
         &:before {
             content: @fa-var-search;

@@ -73,7 +73,16 @@ $(document).ready(function() {
         $(this).toggleClass("hide");
         $('.js-calendar').toggleClass("active");
         calendar.initSwipe()
+    });
 
+    $('.js-calendar').mCustomScrollbar({
+        axis: 'y',
+        scrollbarPosition: 'inside',
+        advanced: {
+            updateOnContentResize: true
+        },
+        live: true,
+        theme: "minimal"
     });
 
     $('.js-select2-purple').select2({

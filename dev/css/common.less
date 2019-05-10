@@ -11,6 +11,23 @@ body {
     color: #9a9a9e;
 }
 
+.wrapper {
+    background-color: @white;
+    box-sizing: border-box;
+
+    .desktop( {
+        display: flex;
+        flex-direction: column;
+        width: ~"calc(100% - 325px)";
+        margin-left: 325px;
+        max-width: 1410px;
+        padding: 50px 50px 0 50px;
+    }
+
+    );
+
+}
+
 //colors
 @bunting: #313443;
 @white: #ffffff;
