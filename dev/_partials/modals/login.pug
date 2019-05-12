@@ -1,0 +1,14 @@
+.modal.js-modal.js-modal-login
+    .modal__close.js-modal-close
+        .hamburger.hamburger--squeeze.is-active
+            .hamburger-box
+                .hamburger-inner
+    .modal__title Войти на сайт
+    form.validator
+        label
+            input(name='email', placeholder='Введите адрес электронной почты', type='text', data-validator-require="true", data-validator-type="email")
+        label
+            input(name='name', placeholder='Введите пароль', type='password', data-validator-require="true")
+        .modal__bottom
+            button.button(type='submit')='Войти'
+            a(href='#').modal__link='Забыли пароль?'

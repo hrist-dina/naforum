@@ -1,10 +1,14 @@
 export default class Validator {
     constructor(selectorForm) {
-        this.selectorForm = selectorForm;
+        if (typeof selectorForm === 'string') {
+            this.form = $(selectorForm);
+        } else if (typeof selectorForm === 'object') {
+            this.form = selectorForm;
+        }
+
         this.requireFiled = 'validator-require';
         this.typeFiled = 'validator-type';
         this.slectorAgreeFiled = 'js-validator-agree';
-        this.form = $(this.selectorForm);
         this.submitButton = this.form.find('[type=submit]');
         this.selectorError = 'validator-error';
         this.selectorErrorMessage = 'validator-error-message';

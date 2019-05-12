@@ -1,0 +1,18 @@
+.modal.js-modal.js-modal-register
+    .modal__close.js-modal-close
+        .hamburger.hamburger--squeeze.is-active
+            .hamburger-box
+                .hamburger-inner
+    .modal__title Регистрация
+    form.validator
+        label
+            input(name='name', placeholder='Имя', type='text', data-validator-require="true")
+        label
+            input(name='email', placeholder='Адрес электронной почты', type='text', data-validator-require="true" data-validator-type="email")
+        label
+            input(name='password', placeholder='Пароль', type='password', data-validator-require="true", minlength=6)
+        label
+            input(name='password_confirm', placeholder='Подтвердите пароль', type='password', data-validator-require="true", minlength=6)
+        button.button(type='submit')='Регистрация'
+        p='Нажимая на кнопку, я соглашаюсь на обработку '
+            a(href='#')='персональных данных'

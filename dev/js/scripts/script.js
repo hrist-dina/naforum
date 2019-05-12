@@ -1,6 +1,9 @@
 import Validator from './Validator'
 import Calendar from  './Calendar'
 import Inputmask from 'inputmask/dist/inputmask/inputmask.numeric.extensions'
+import Modal from './Modal'
+
+
 $(document).ready(function() {
     let contactForm = new Validator('.js-contact-form');
     contactForm.validateAgree();
@@ -13,6 +16,42 @@ $(document).ready(function() {
 
     let im = new Inputmask('+7(999)999-99-99');
     im.mask($('.js-phone-inputmask'));
+
+
+    let modals = new Modal(
+        '.js-modal',
+        '.js-modal-open',
+        '.js-modal-close',
+        {
+            transitionIn: 'fadeInUp',
+            transitionOut: 'fadeOutDown'
+
+        }
+    );
+
+    // Перебираем массив иницализированных модалок
+    modals.modal.map(i => {
+        // Берем элемент
+        let item = $(modals.modal[i]);
+
+        // Находим форму с классом для валидации
+        let form = item.find('form.validator');
+        // Если не найдено выходим из цикла
+        if (!form.length) {
+            return false;
+        }
+        // Иначе идем далее, создаем объект класса валидатора,
+        // Передаем агументом объект формы
+        let validatorForm = new Validator(form);
+        // Слушаем отправку формы
+        form.on('submit', function (e) {
+            // Если вернулась ошибка, останавливаем отпраку формы
+            if (validatorForm.init()) {
+                e.preventDefault();
+            }
+        });
+    });
+
 
     let dates = [{
         year: 2019,

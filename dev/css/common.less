@@ -18,14 +18,22 @@ body {
     .desktop( {
         display: flex;
         flex-direction: column;
-        width: ~"calc(100% - 325px)";
-        margin-left: 325px;
-        max-width: 1410px;
         padding: 50px 50px 0 50px;
     }
 
     );
 
+}
+
+.wrapper,
+.footer {
+    .desktop( {
+        width: ~"calc(100% - 325px)";
+        margin-left: 325px;
+        max-width: 1410px;
+    }
+
+    );
 }
 
 //colors
@@ -206,11 +214,12 @@ body {
 }
 
 .auth {
-    font-size: 17px;
-    line-height: normal;
-    color: @white;
-
     &__login {
+        font-size: 17px;
+        line-height: normal;
+        color: @white;
+        text-decoration: none;
+
         &::after {
             content: "/";
             position: relative;
