@@ -1,13 +1,24 @@
 .top-section {
+    padding-top: 20px;
+
+    background-color: #F0F0F2;
+
+    .desktop( {
+            padding-top: 0;
+            background-color: @white;
+        }
+
+    );
 
     &__date {
         font-size: 20px;
         color: @night-rider;
 
         .desktop( {
-            display: inline-block;
-            margin-right: 25px;
-        }
+                display: inline-block;
+                margin-right: 25px;
+
+            }
 
         );
     }
@@ -20,9 +31,9 @@
         color: @night-rider;
 
         .desktop( {
-            display: inline-flex;
-            margin-top: 0;
-        }
+                display: inline-flex;
+                margin-top: 0;
+            }
 
         );
 
