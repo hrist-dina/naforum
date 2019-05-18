@@ -4,19 +4,20 @@ mixin rating(title, list, showAll=false, whiteBgc=false, pagination=false)
             if title
                 .section__title=title
             ul.rating__list
-                for item in list
+                for item, key in list
                     li.rating__item
+                        .rating__number=(key + 1)
                         .rating__item-inner
                             .rating__img
                                 img(src=item.img alt="")
                             .rating__middle
-                                .rating__name
-                                    a.rating__link(href="#")=item.name
-                                    .rating__city=item.city
+                                a.rating__link(href="#")=item.name
+                                .rating__city=item.city
                                 .rating__comments
                                     span=item.comments
-                        .rating__text Рейтинг
-                            .rating__values=item.rating
+                        .rating__values
+                            .rating-circle
+                                span=item.rating
 
             if showAll
                 .button-link__wrap

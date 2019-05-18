@@ -1,6 +1,8 @@
-extends _layouts/home	
+extends _layouts/home
+block calendar
+        include _partials/calendar/index
+        +calendar(checkboxList, true)
 block content
-        - var showCaledar = true
         include _data/home
         include _partials/developments/index
         include _partials/banner/index

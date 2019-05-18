@@ -12,9 +12,13 @@
         height: 210px;
         margin-top: 15px;
         background: @white;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.09);
+        border: 1px solid @light-gray;
         padding: 12px;
         box-sizing: border-box;
+
+        &:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);
+        }
 
         &:first-child {
             margin-top: 0;
@@ -37,8 +41,9 @@
 
         &__bottom {
             flex: 0 0 auto;
-            padding-top: 12px;
-            border-top: 1px solid rgba(124, 70, 212, 0.2);
+            padding: 12px 12px 0;
+            margin: 0 -12px;
+            border-top: .75px solid @light-gray;
         }
 
         &__favorite {
@@ -55,9 +60,15 @@
             }
         }
 
-        &__date {
+        &__date,
+        &__city {
+            display: inline-block;
             font-size: 14px;
-            color: @eclipse;
+            color: @santas-grey;
+        }
+
+        &__date {
+            margin-right: 10px;
         }
 
         &__tags {
@@ -65,11 +76,11 @@
 
             & li {
                 display: inline-block;
+                border-radius: 3px;
                 text-align: center;
-                padding: 3px;
+                padding: 7px 8px;
                 margin-top: 8px;
                 margin-right: 8px;
-                min-width: 111px;
                 list-style-type: none;
                 background-color: @cerise;
                 color: @white;
@@ -79,11 +90,11 @@
         }
 
         &__title {
-            margin-top: 17px;
+            margin-top: 15px;
             line-height: 29px;
             font-size: 25px;
             color: @night-rider;
-            font-weight: 900;
+            font-weight: normal;
             font-style: normal;
             max-height: 90px;
             overflow: hidden;
@@ -99,7 +110,8 @@
                 content: "";
                 position: absolute;
                 left: 0;
-                background-image: url("../img/master-class-purse.svg");
+                top: -3px;
+                background-image: url("../img/purse.svg");
                 width: 14px;
                 height: 14px;
             }
@@ -123,6 +135,17 @@
     & .mc-card-pic {
         margin-bottom: 22px;
 
+        .desktop({
+            width: ~"calc(50% - 15px)";
+        });
+
+        &__list {
+            .desktop({
+                display: flex;
+                justify-content: space-between;
+            });
+        }
+
         &__content {
             height: 225px;
             position: relative;
@@ -136,6 +159,25 @@
 
             background-repeat: no-repeat;
             background-size: cover;
+
+            border: 2px solid transparent;
+            -moz-border-image: -moz-linear-gradient(
+                    top left,
+                    @purple-light 0%,
+                    @purple-dark 100%
+            );
+            -webkit-border-image: -webkit-linear-gradient(
+                    top left,
+                    @purple-light 0%,
+                    @purple-dark 100%
+            );
+            border-image: linear-gradient(
+                    to bottom right,
+                    @purple-light 0%,
+                    @purple-dark 100%
+            );
+            box-sizing: border-box;
+            border-image-slice: 1;
         }
 
         &__inner {
@@ -153,11 +195,11 @@
             & li {
                 display: inline-block;
                 text-align: center;
-                padding: 3px;
+                padding: 7px 8px;
                 margin-top: 8px;
                 margin-right: 8px;
-                min-width: 111px;
                 background-color: @cerise;
+                border-radius: 3px;
                 color: @white;
                 font-weight: normal;
                 font-size: 14px;
@@ -169,6 +211,7 @@
             font-weight: bold;
             font-size: 16px;
             color: @midnight-express;
+            line-height: 22px;
         }
 
         &__price {

@@ -9,7 +9,8 @@
         font-size: 16px;
         text-decoration: none;
         font-weight: normal;
-        color: #151d3f;
+        color: @midnight-express;
+        margin-bottom: 8px;
     }
 
     &__item {
@@ -18,22 +19,29 @@
         align-items: center;
         list-style-type: none;
         padding: 10px 0;
-        border-top: 1px solid gray; // #e3e4e5;
-        border-bottom: 1px solid gray; //#e3e4e5;
-
-        &:first-child {
-            border-top: none;
-        }
 
         &-inner {
             display: flex;
             align-items: center;
-            width: ~"calc(100% - 55px)";
+            border-left: 2px solid @border-rating;
+            padding-left: 12px;
+            width: ~"calc(100% - 35px)";
         }
     }
 
+    &__number {
+        align-self: self-start;
+        font-size: 15px;
+        font-weight: bold;
+        color: #7C46D4;
+        padding-right: 5px;
+
+    }
+
+
     &__middle {
         display: flex;
+        flex-direction: column;
         width: ~"calc(100% - 55px)";
     }
 
@@ -41,6 +49,7 @@
         width: 54px;
         height: 54px;
         margin-right: 12px;
+        align-self: self-start;
 
         & img {
             width: 100%;
@@ -56,7 +65,8 @@
     &__city {
         font-weight: 300;
         font-size: 14px;
-        color: #9a9a9e;
+        color: @santas-grey;
+        margin-bottom: 5px;
     }
 
     &__comments {
@@ -64,8 +74,7 @@
         .fas;
         margin-left: 10px;
         font-size: 12px;
-        line-height: 14px;
-        color: #9a9a9e;
+        color: @santas-grey;
         line-height: 20px;
 
         & span {
@@ -87,9 +96,44 @@
     }
 
     &__values {
-        font-weight: 900;
-        font-size: 16px;
-        line-height: 20px;
-        color: #f2c94c;
+        position: relative;
+        align-self: self-start;
     }
+
+    &-circle {
+        position: absolute;
+        top: -26px;
+        right: 0;
+        width: 52px;
+        height: 52px;
+        background-image: url("../img/rating-mc-event.svg");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & span {
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            color: #151d3f;
+            &:first-letter {
+                font-size: 22px;
+            }
+        }
+    }
+
+    &__values  &-circle {
+        background-size: 46px;
+        width: 46px;
+        height: 46px;
+        top: 0;
+
+        span {
+            font-size: 18px;
+        }
+    }
+
 }
+
+

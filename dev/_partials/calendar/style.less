@@ -192,9 +192,20 @@
 
 
 .calendar {
-    padding-top: 20px;
     background: @bunting;
+    padding: 20px 0;
 
+    & .datepicker {
+        .desktop( {
+            padding: 0 20px;
+        });
+    }
+
+    & .container {
+        .desktop( {
+           padding: 0 25px;
+        });
+    }
 
     .desktop( {
         position: fixed !important;
@@ -477,6 +488,26 @@
 
     &__mt-30 {
         margin-top: 30px;
+    }
+
+    &__mt-10 {
+        margin-top: 10px;
+    }
+
+    &__menu {
+        display: none;
+
+        .desktop({
+            display: block;
+
+            & .auth {
+                margin-top: 40px;
+            }
+
+            & .modal-search {
+                margin-top: 40px;
+            }
+        });
     }
 
 }
