@@ -23,8 +23,9 @@ $(document).ready(function() {
         '.js-modal-open',
         '.js-modal-close',
         {
-            transitionIn: 'fadeInUp',
-            transitionOut: 'fadeOutDown'
+            transitionIn: 'fadeInLeft',
+            transitionOut: 'fadeOutLeft',
+            width: 'auto',
 
         }
     );
@@ -154,6 +155,7 @@ $(document).ready(function() {
         $(this).toggleClass("is-active");
         $(".js-mobile-menu").toggleClass("mobile-menu_active");
         $("html").toggleClass("overflow-hiiden");
+        $(".js-header-middle, .js-header-right").toggleClass("hide");
     });
 
     $(".js-slider-expert").slick({

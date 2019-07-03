@@ -2,31 +2,43 @@
     .desktop( {
         position: fixed;
         z-index: 50;
-        width: 325px;
+        width: @desktop-calendar-width;
     }
 
     );
 
     &.mobile-menu_active {
         position: fixed;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        bottom: 0px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         z-index: 110;
         height: 100%;
         overflow: auto;
+
+        .desktop( {
+            overflow: inherit;
+        }
+
+        );
     }
 
     &-left,
     &-middle,
     &-right {
         width: 33%;
+
+        .desktop( {
+            width: 45%;
+        }
+
+        );
     }
 
     &-left {
         .desktop( {
-            display: none;
+            width: 10%;
         }
 
         );
@@ -49,7 +61,7 @@
             padding-top: 25px;
 
             & > .container {
-                padding: 0  25px ;
+                padding: @desktop-calendar-padding;
             }
         }
 

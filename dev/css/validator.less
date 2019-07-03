@@ -1,14 +1,45 @@
+
+.border-error() {
+    border: 1px solid #EE3769;
+    box-sizing: border-box;
+}
+
 .validator {
     &-error {
+        position: relative;
+        .border-error;
 
         &-message {
-            font-size: 12px;
+            position: absolute;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 21px;
             padding-top: 5px;
-            color: red;
+            color: #EE3769;
+            padding-left: 18px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: auto;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 10px;
+                height: 10px;
+                border-bottom: 1px solid #EE3769;
+                border-left: 1px solid #EE3769;
+            }
         }
     }
 
     & [type=submit]:disabled {
         opacity: .3;
     }
+}
+
+body input.validator-error {
+    .border-error;
 }

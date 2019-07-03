@@ -1,6 +1,7 @@
 include data
 
 include ../select/index
+include ../footer/index
 
 mixin calendar(checkboxList, showCalendar=false)
     .calendar.js-calendar(class=showCalendar ? 'show' : '')
@@ -38,15 +39,17 @@ mixin calendar(checkboxList, showCalendar=false)
                     button(type='submit', class='button calendar__mt-30') Применить
         .calendar__menu
             .container
-                a(href='javascript:void(0)', class='button calendar__mt-10') Добавить событие
-
-                .auth
-                    a.auth__login.js-modal-open(href='#', data-modal-type="login") Вход на сайт
-                    a.auth__login.js-modal-open(href='#', data-modal-type="register") Регистрация
+                //a(href='javascript:void(0)', class='button calendar__mt-10') Добавить событие
+                //
+                //.auth
+                //    a.auth__login.js-modal-open(href='#', data-modal-type="login") Вход на сайт
+                //    a.auth__login.js-modal-open(href='#', data-modal-type="register") Регистрация
 
                 form.modal-search(action="" method="")
                     input.modal-search__input(name='email', type='text', placeholder='Поиск по сайту')
                     button.modal-search__submit(type="submit")
+        +footer(true)
+
 
 
 

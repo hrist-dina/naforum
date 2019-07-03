@@ -203,7 +203,7 @@
 
     & .container {
         .desktop( {
-           padding: 0 25px;
+           padding: @desktop-calendar-padding;
         });
     }
 
@@ -212,8 +212,7 @@
         left: 0;
         top: 50px;
         bottom: 0;
-        width: 325px;
-        box-shadow: inset -5px 0px 5px rgba(105, 93, 124, 0.16);
+        width: @desktop-calendar-width;
         z-index: 50;
     }
 
@@ -500,12 +499,8 @@
         .desktop({
             display: block;
 
-            & .auth {
-                margin-top: 40px;
-            }
-
             & .modal-search {
-                margin-top: 40px;
+                margin-top: 24px;
             }
         });
     }

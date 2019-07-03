@@ -22,15 +22,24 @@ body {
     }
 
     );
-
 }
 
 .wrapper,
 .footer {
     .desktop( {
-        width: ~"calc(100% - 325px)";
-        margin-left: 325px;
+        width: ~"calc(100% - @{desktop-calendar-width})";
+        margin-left: @desktop-calendar-width;
         max-width: 1410px;
+    }
+
+    );
+}
+
+.calendar .footer {
+    .desktop( {
+        width: 100%;
+        margin-left: 0;
+        max-width: inherit;
     }
 
     );
@@ -55,6 +64,9 @@ body {
 
 
 @border-rating: #D2D2D2;
+
+@desktop-calendar-width: 480px;
+@desktop-calendar-padding: 0 40px 0 50px;
 
 .yellow {
 
@@ -129,6 +141,17 @@ body {
     color: @midnight-express;
 }
 
+.overflow-hiiden {
+    overflow: hidden;
+
+
+    .desktop( {
+        overflow: inherit;
+    }
+
+    );
+}
+
 .section {
     &__title {
         font-weight: 900;
@@ -162,6 +185,8 @@ body {
     box-sizing: border-box;
     border: none;
     outline: none;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
 
     &__wrap {
         text-align: center;
@@ -219,16 +244,17 @@ body {
 
 .auth {
     &__login {
-        font-size: 17px;
-        line-height: normal;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 22px;
         color: @white;
         text-decoration: none;
 
         &::after {
-            content: "/";
+            content: "|";
             position: relative;
-            margin-left: 5px;
-            margin-right: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
         &:last-child::after {
@@ -239,6 +265,10 @@ body {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.hide {
+    display: none;
 }
 
 // slider-content
@@ -310,6 +340,7 @@ body {
 
 .input-checkbox,
 .input-checkbox-color {
+    cursor: pointer;
 
     & input {
         display: none;

@@ -1,4 +1,8 @@
 .footer {
+    .desktop({
+        display: none;
+    });
+
     &-top {
         background: #2c2e39;
     }
@@ -27,6 +31,35 @@
         text-align: center;
         line-height: 20px;
         color: #ffffff;
+    }
+
+    &_desktop {
+        display: block;
+        margin-top: 50px;
+
+        & .social {
+            &__list {
+                text-align: left;
+            }
+        }
+    }
+
+    &_desktop &-top,
+    &_desktop &-bottom {
+        background: @bunting;
+    }
+
+    &_desktop &-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &_desktop &-copyright {
+        text-align: left;
+        padding: 30px 0 0 0;
+
+        & p {
+            display: inline-block;
+        }
     }
 }
 
