@@ -1,0 +1,103 @@
+-
+    const hasPic = item => item.pic
+    const getPic = item => hasPic(item) ? `style=background-image: url('${item.pic}')` : ''
+    const mcCardList = [
+        {
+            date: '11 октября 2018',
+            city: 'Барнаул',
+            tags: [
+                {
+                    color: 'yellow',
+                    label: 'Менеджмент'
+                }
+            ],
+            title: 'Максим Батырев. Менеджер и команда. Как создать команду мечты',
+            price: 6000,
+            pic: 'pictures/mc-card-pic-1.jpg'
+        },
+        {
+            date: '21 октября 2018',
+            city: 'Барнаул',
+            tags: [
+                {
+                    color: 'yellow',
+                    label: 'Менеджмент'
+                }
+            ],
+            title: 'Менеджер и команда. Как создать команду мечты',
+            price: 6000,
+            pic: 'pictures/mc-card-pic-2.jpg'
+        },
+        {
+            date: '11 мая 2019',
+            city: 'Барнаул',
+            tags: [
+                {
+                    color: 'yellow',
+                    label: 'Менеджмент'
+                }
+            ],
+            title: 'Менеджер и команда. Как создать команду мечты еще одно предложение',
+            price: 6000
+        },
+        {
+            date: '27-31 мая 2019',
+            city: 'Москва',
+            tags: [
+                {
+                    color: 'yellow',
+                    label: 'Менеджмент'
+                }
+            ],
+            title: 'Московская неделя предпринимательства',
+            price: 6000
+        },
+        {
+            date: '31 мая - 1 июня 2019',
+            city: 'Москва',
+            tags: [
+                {
+                    color: 'skyblue',
+                    label: 'Маркетинг'
+                }
+            ],
+            title: 'Московская неделя предпринимательства',
+            price: 6000
+        },
+        {
+            date: '11 октября 2019',
+            city: 'Москва',
+            tags: [
+                {
+                    color: 'yellow',
+                    label: 'Менеджмент'
+                }
+            ],
+            title: 'Международная конференция по управлению проектами',
+            price: 6000
+        },
+        {
+            date: '11 октября 2019',
+            city: 'Одесса',
+            tags: [
+                {
+                    color: 'skyblue',
+                    label: 'Маркетинг'
+                }
+            ],
+            title: 'Киевский международный фестиваль рекламы (КМФР)',
+            price: 6000
+        },
+        {
+            date: '11 ноября 2019',
+            city: 'Москва',
+            tags: [
+                {
+                    color: 'purple',
+                    label: 'Техника'
+                }
+            ],
+            title: '«Дистанционные сервисы, мобильные решения, карты и платежи»',
+            price: 6000
+        },
+    ];

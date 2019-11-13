@@ -1,21 +1,25 @@
+include data
+
+
 section.master-class
     .container
         .mc-card__list
-            .mc-card
-                .mc-card__inner
-                    .mc-card__content
-                        .mc-card__favorite
-                        .mc-card__date 11 окт 2018
-                        .mc-card__city Барнаул
-                        ul.mc-card__tags
-                            li Мастер-класс
-                            li Менеджмент 
-                        .mc-card__title 
-                            |Менеджер и команда. Как создать команду мечты
-                    .mc-card__bottom
-                        .mc-card__price Стоимость
-                            | 
-                            span от 6000 руб. 
+            for card in mcCardList
+                .mc-card(=(getPic(card)))
+                    .mc-card__inner
+                        .mc-card__content
+                            .mc-card__favorite
+                            .mc-card__date 11 окт 2018
+                            .mc-card__city Барнаул
+                            ul.mc-card__tags
+                                li Мастер-класс
+                                li Менеджмент
+                            .mc-card__title
+                                |Менеджер и команда. Как создать команду мечты
+                        .mc-card__bottom
+                            .mc-card__price Стоимость
+                                |
+                                span от 6000 руб.
             .mc-card
                 .mc-card__inner
                     .mc-card__content

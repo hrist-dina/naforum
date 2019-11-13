@@ -129,7 +129,7 @@ $(document).ready(function() {
   $(".js-hamburger").on("click", function() {
     $(this).toggleClass("is-active");
     $(".js-mobile-menu").toggleClass("mobile-menu_active");
-    $("html").toggleClass("overflow-hiiden");
+    $("html").toggleClass("overflow-hidden");
     $(".js-header-middle, .js-header-right").toggleClass("hide");
   });
 
