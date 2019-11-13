@@ -1,0 +1,11 @@
+extends ../views/layouts/default
+block content
+    include ../data/sponsor
+    include ../blocks/components/select/index
+    include ../blocks/components/title/index
+    include ../blocks/components/banner/index
+
+    +title('Организаторы')
+    +select(select, 'js-select2-purple', 'Ваш город')
+    include ../blocks/components/sponsor-all/index
+    +banner(banner, true)

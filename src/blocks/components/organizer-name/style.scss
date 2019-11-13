@@ -1,0 +1,29 @@
+.organizer-name {
+  &__img {
+    padding-top: 35px;
+    position: relative;
+    min-height: 150px;
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+
+    & .back-page {
+      left: 0;
+      color: #3f3f3f;
+    }
+  }
+
+  &__block {
+    position: relative;
+    margin: 25px 0 15px;
+  }
+
+  &__name {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #151d3f;
+  }
+}

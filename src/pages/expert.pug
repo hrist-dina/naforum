@@ -1,0 +1,14 @@
+extends ../views/layouts/default
+block content
+    include ../data/expert-event
+    include ../blocks/components/description/index
+    include ../blocks/components/developments/index
+    include ../blocks/components/comment/index
+    include ../blocks/components/banner/index
+
+    include ../blocks/components/expert-info/index
+    +description(description.title, description.content, description.blockList)
+    +developments(developments.title, developments.list, true)
+    include ../blocks/components/expert-column/index
+    +comment(comment.title, false, comment.list, false)
+    +banner(banner, true)

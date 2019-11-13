@@ -1,0 +1,159 @@
+.select2-container--naforum-purple,
+.select2-container--naforum-bunting {
+  display: block;
+
+  & > .select2-results__options {
+    border: 1px solid $purple-light;
+  }
+
+  & .select2-results__option {
+    padding: 10px 30px 10px 15px;
+    background-color: $white;
+    color: $eclipse;
+    border-bottom: 1px solid $purple-light;
+
+    &:hover {
+      background-color: $purple-light;
+      color: $white;
+    }
+  }
+
+  & .select2-selection--single {
+    width: 100%;
+    padding: 10px 30px 10px 15px;
+    border: 1px solid $purple-light;
+    height: 44px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $white;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: $eclipse;
+    outline: none;
+    line-height: 1.5;
+
+    & .select2-selection__arrow {
+      height: 100%;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        @extend %fa-icon;
+        @extend .far;
+        content: $fa-var-chevron-down;
+        color: $purple-light;
+        font-size: 15px;
+      }
+
+      & b {
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+
+  &.select2-container--open {
+    & .select2-selection--single .select2-selection__arrow {
+      &::before {
+        content: $fa-var-chevron-up;
+      }
+    }
+  }
+}
+
+.select2-container--naforum-bunting {
+  & > .select2-results__options {
+    border: 1px solid $white;
+    background-color: $bunting;
+  }
+
+  & .select2-results__option {
+    padding: 10px 30px 10px 15px;
+    background-color: $bunting;
+    color: $white;
+    border-bottom: 1px solid $white;
+
+    &:hover {
+      background-color: $white;
+      color: $bunting;
+    }
+  }
+
+  & .select2-selection--single {
+    border: 1px solid $white;
+    background-color: transparent;
+    color: $white;
+
+    & .select2-selection__arrow {
+      &::before {
+        color: $white;
+      }
+    }
+  }
+}
+
+.select {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  &-label {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    color: $midnight-express;
+    margin-bottom: 15px;
+  }
+
+  &-tag {
+    width: 100%;
+    padding: 10px 30px 10px 15px;
+    border: 1px solid $purple-light;
+    height: 44px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../img/arrow-down.svg");
+    background-size: 14px, 6px;
+    background-position: #{"calc(100% - 15px)"} 1em, #{"calc(100% - 20px)"} 1em,
+      #{"calc(100% - 2.5em)"} 0.5em;
+    background-repeat: no-repeat;
+    background-color: $white;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: $eclipse;
+    outline: none;
+
+    &:focus {
+      background-image: url("../img/arrow-up.svg");
+      outline: 0;
+      pointer-events: none;
+    }
+
+    &::-ms-expand {
+      display: none; /* remove default arrow in IE 10 and 11 */
+    }
+
+    /* target Internet Explorer 9 to undo the custom arrow */
+    @media screen and (#{"min-width:0\0"}) {
+      background: none\9;
+      padding: 5px\9;
+    }
+
+    &:focus,
+    & option:focus,
+    & option:active {
+      outline: none;
+    }
+
+    & option {
+      background: $white;
+      padding: 10px;
+    }
+  }
+}

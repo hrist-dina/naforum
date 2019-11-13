@@ -1,0 +1,474 @@
+.datepicker {
+  background: $bunting;
+
+  &--nav {
+    display: none;
+  }
+
+  &--cells {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  &--cell,
+  &--day-name {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1;
+    height: 52px;
+    font-size: 14px;
+    color: $white;
+    text-decoration: none;
+    border: 2px solid transparent;
+
+    width: 14.28571%;
+  }
+
+  &--days-names {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 8px 0 3px;
+  }
+
+  &--day-name {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.datepicker--cell-day.-other-month-,
+.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+  opacity: 0.5;
+}
+
+.datepicker--cell-day.-other-month-:hover,
+.datepicker--cell-year.-other-decade-:hover {
+  color: #c5c5c5;
+}
+
+.-disabled-.-focus-.datepicker--cell-day.-other-month-,
+.-disabled-.-focus-.datepicker--cell-year.-other-decade- {
+  color: #dedede;
+}
+
+.-selected-.datepicker--cell-day.-other-month-,
+.-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: #a2ddf6;
+}
+
+.-selected-.-focus-.datepicker--cell-day.-other-month-,
+.-selected-.-focus-.datepicker--cell-year.-other-decade- {
+  background: #8ad5f4;
+}
+
+.-in-range-.datepicker--cell-day.-other-month-,
+.-in-range-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.1);
+  color: #cccccc;
+}
+
+.-in-range-.-focus-.datepicker--cell-day.-other-month-,
+.-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+.datepicker--cell-day.-other-month-:empty,
+.datepicker--cell-year.-other-decade-:empty {
+  background: none;
+  border: none;
+}
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+
+.datepicker--cell.-focus- {
+  border: 2px solid rgba(238, 55, 105, 0.5);
+}
+
+.datepicker--cell.-current- {
+  color: #4eb5e6;
+}
+
+.datepicker--cell.-current-.-focus- {
+  color: $white;
+}
+
+.datepicker--cell.-current-.-in-range- {
+  color: #4eb5e6;
+}
+
+.datepicker--cell.-in-range- {
+  background: rgba(92, 196, 239, 0.1);
+  color: #4a4a4a;
+  border-radius: 0;
+}
+
+.datepicker--cell.-in-range-.-focus- {
+  background-color: rgba(92, 196, 239, 0.2);
+}
+
+.datepicker--cell.-disabled- {
+  cursor: default;
+  color: #aeaeae;
+}
+
+.datepicker--cell.-disabled-.-focus- {
+  color: #aeaeae;
+}
+
+.datepicker--cell.-disabled-.-in-range- {
+  color: #a1a1a1;
+}
+
+.datepicker--cell.-disabled-.-current-.-focus- {
+  color: #aeaeae;
+}
+
+.datepicker--cell.-range-from- {
+  border: 1px solid rgba(92, 196, 239, 0.5);
+  background-color: rgba(92, 196, 239, 0.1);
+  border-radius: 4px 0 0 4px;
+}
+
+.datepicker--cell.-range-to- {
+  border: 1px solid rgba(92, 196, 239, 0.5);
+  background-color: rgba(92, 196, 239, 0.1);
+  border-radius: 0 4px 4px 0;
+}
+
+.datepicker--cell.-range-from-.-range-to- {
+  border-radius: 4px;
+}
+
+.datepicker--cell.-selected- {
+  border: 2px solid #ee3769;
+}
+
+.datepicker--cell.-selected-.-current- {
+  border: 2px solid #ee3769;
+}
+
+.datepicker--cell.-selected-.-focus- {
+  border: 2px solid #c93664;
+}
+
+.datepicker--cell:empty {
+  cursor: default;
+}
+
+.calendar {
+  background: $bunting;
+  padding: 20px 0;
+
+  & .datepicker {
+    @include desktop {
+      padding: 0 20px;
+    }
+  }
+
+  & .container {
+    @include desktop {
+      padding: $desktop-calendar-padding;
+    }
+  }
+
+  @include desktop {
+    position: fixed !important;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: $desktop-calendar-width;
+    z-index: 50;
+  }
+
+  &.active {
+    min-height: 100%;
+  }
+
+  @include mobile {
+    &:not(.active) {
+      & .datepicker--days-names {
+        display: none;
+      }
+
+      & .datepicker--cells {
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: 100%;
+        min-height: 52px;
+        overflow-x: auto;
+        box-sizing: border-box;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      & .datepicker--cell {
+        width: 14.28571%;
+        height: 52px;
+        min-width: 14.28571%;
+      }
+
+      & .-other-month- {
+        display: none;
+      }
+
+      & .calendar__filter-wrap {
+        display: none;
+      }
+
+      & .select {
+        display: none;
+      }
+
+      & .button {
+        display: none;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+  }
+
+  &__month {
+    font-size: 20px;
+    color: $white;
+    margin: 0 10px;
+  }
+
+  &__expand,
+  &__roll-up {
+    position: relative;
+    font-size: 14px;
+    color: $white;
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  &__expand::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -3px;
+    background-repeat: no-repeat;
+    border: 6px solid transparent;
+    border-top: 5px solid $white;
+  }
+
+  &__roll-up {
+    display: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -10px;
+      background-repeat: no-repeat;
+      border: 6px solid transparent;
+      border-bottom: 5px solid $white;
+    }
+  }
+
+  &__controll {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__controll.hide > &__expand {
+    display: none;
+  }
+
+  &__controll.hide > &__roll-up {
+    display: block;
+  }
+
+  &__day,
+  &__day-week {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: #{"calc(100% / 7)"};
+    height: 52px;
+    min-width: #{"calc(100% / 7)"};
+    position: relative;
+    font-size: 14px;
+    color: $white;
+    text-decoration: none;
+
+    &.active {
+      border-bottom: 3px solid #ee3769;
+    }
+
+    &-event {
+      list-style-type: none;
+      position: absolute;
+      right: 3px;
+
+      & li {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  &__block {
+    border-bottom: 1px solid #7e7e7e;
+
+    & .active {
+      border: 2px solid #ee3769;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__prev,
+  &__next {
+    @extend %fa-icon;
+    @extend .far;
+  }
+
+  &__prev,
+  &__next {
+    font-size: 16px;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__prev::before {
+    content: $fa-var-chevron-left;
+  }
+
+  &__next::before {
+    content: $fa-var-chevron-right;
+  }
+
+  &__wrap {
+    background-color: #313443;
+    min-height: 100%;
+  }
+
+  &.active &__wrap {
+    padding-bottom: 20px;
+  }
+
+  & .select {
+    display: block;
+
+    & option {
+      color: $bunting;
+    }
+
+    &-tag {
+      background-image: url("../img/arrow-down-white.svg");
+      background-color: $bunting;
+      border-color: $white;
+      color: $white;
+
+      &:focus {
+        background-image: url("../img/arrow-up-white.svg");
+      }
+    }
+
+    &-label {
+      color: $white;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 19px;
+    color: $white;
+  }
+
+  &__filter {
+    &-wrap {
+      padding-top: 20px;
+      display: block;
+    }
+
+    &-list {
+      list-style-type: none;
+      padding-top: 20px;
+
+      & > li {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $white;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  & .button {
+    display: block;
+  }
+
+  &__mt-30 {
+    margin-top: 30px;
+  }
+
+  &__mt-10 {
+    margin-top: 10px;
+  }
+
+  &__menu {
+    display: none;
+
+    @include desktop {
+      display: block;
+
+      & .modal-search {
+        margin-top: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  & .back-page {
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #3f3f3f;
+  }
+
+  & .h1 {
+    margin-top: 25px;
+  }
+}

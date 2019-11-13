@@ -1,0 +1,9 @@
+extends ../views/layouts/default
+block content
+    include ../data/article-list
+    include ../blocks/components/title/index
+    include ../blocks/components/banner/index
+
+    +title('Статьи')
+    include ../blocks/components/article-list/index
+    +banner(banner, true)

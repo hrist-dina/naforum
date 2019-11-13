@@ -1,0 +1,111 @@
+.header {
+  @include desktop {
+    position: fixed;
+    z-index: 50;
+    width: $desktop-calendar-width;
+  }
+
+  &.mobile-menu_active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 110;
+    height: 100%;
+    overflow: auto;
+
+    @include desktop {
+      overflow: inherit;
+    }
+  }
+
+  &-left,
+  &-middle,
+  &-right {
+    width: 33%;
+
+    @include desktop {
+      width: 45%;
+    }
+  }
+
+  &-left {
+    @include desktop {
+      width: 10%;
+    }
+  }
+
+  &-middle {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-bgc {
+    padding: 15px 0;
+    background: linear-gradient(146.17deg, #6441a5 0.44%, #2a0845 90.38%);
+
+    @include desktop {
+      background: $bunting;
+      padding-top: 25px;
+
+      & > .container {
+        padding: $desktop-calendar-padding;
+      }
+    }
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-logo {
+    max-width: 138px;
+    display: inline-block;
+
+    &__img {
+      width: 100%;
+    }
+  }
+
+  &-search {
+    @extend %fa-icon;
+    @extend .fal;
+    font-size: 16px;
+    color: $white;
+    text-decoration: none;
+
+    @include desktop {
+      display: none;
+    }
+
+    &:before {
+      content: $fa-var-search;
+    }
+  }
+
+  &-favorites {
+    @extend %fa-icon;
+    @extend .fas;
+    font-size: 16px;
+    color: $white;
+    text-decoration: none;
+    margin-left: 15px;
+
+    & span {
+      font-family: "HelveticaNeueCyr";
+      font-weight: normal;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    &:before {
+      content: $fa-var-bookmark;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+extends ../views/layouts/default
+block content
+    include ../data/card-event
+    include ../blocks/components/description/index
+    include ../blocks/components/developments/index
+    include ../blocks/components/comment/index
+    include ../blocks/components/banner/index
+
+    include ../blocks/components/event-master-class/index
+    include ../blocks/components/event-date/index
+    include ../blocks/components/event-expert/index
+    +description(description.title, description.content, description.blockList)
+    include ../blocks/components/event-interesting/index
+    include ../blocks/components/event-schedule/index
+    include ../blocks/components/event-slider/index
+    include ../blocks/components/event-participate/index
+    include ../blocks/components/map/index
+    +comment(comment.title, true, comment.list, true)
+    +developments(developments.title, developments.list, true)
+    +banner(banner)
+    

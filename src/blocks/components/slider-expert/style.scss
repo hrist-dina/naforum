@@ -1,0 +1,54 @@
+.slider-expert {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  background: #f5f0f2;
+
+  & .section__title {
+    margin-right: -15px;
+  }
+
+  &__info {
+    background: $white;
+    padding: 15px 7px;
+
+    &-date {
+      font-weight: 300;
+      color: $santas-grey;
+    }
+
+    &-title {
+      margin-top: 5px;
+      font-weight: 500;
+      font-size: 17px;
+      color: $midnight-express;
+    }
+
+    &-leading {
+      font-weight: normal;
+      color: $cerise;
+    }
+
+    &-bottom {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    &-reviews {
+      @extend %fa-icon;
+      @extend .fas;
+      margin-left: 10px;
+      color: #c4c4c4;
+      line-height: 20px;
+
+      & span {
+        font-family: HelveticaNeueCyr, serif;
+        font-weight: 300;
+      }
+
+      &::before {
+        content: $fa-var-comment-dots;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.footer {
+  @include desktop {
+    display: none;
+  }
+
+  &-top {
+    background: #2c2e39;
+  }
+
+  &__title {
+    padding-top: 38px;
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: normal;
+  }
+
+  &__add {
+    margin-top: 18px;
+  }
+
+  &-bottom {
+    background: black;
+  }
+
+  &-copyright {
+    padding: 24px;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    color: #ffffff;
+  }
+
+  &_desktop {
+    display: block;
+    margin-top: 50px;
+
+    & .social {
+      &__list {
+        text-align: left;
+      }
+    }
+  }
+
+  &_desktop &-top,
+  &_desktop &-bottom {
+    background: $bunting;
+  }
+
+  &_desktop &-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  &_desktop &-copyright {
+    text-align: left;
+    padding: 30px 0 0 0;
+
+    & p {
+      display: inline-block;
+    }
+  }
+}
+
+.social {
+  &__list {
+    text-align: center;
+    padding-bottom: 27px;
+    padding-top: 20px;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__vk,
+  &__fb,
+  &__ok {
+    @extend %fa-icon;
+    @extend .fab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__vk {
+    &::before {
+      content: $fa-var-vk;
+    }
+  }
+
+  &__fb {
+    &::before {
+      content: $fa-var-facebook-f;
+    }
+  }
+
+  &__ok {
+    &::before {
+      content: $fa-var-odnoklassniki;
+    }
+  }
+}

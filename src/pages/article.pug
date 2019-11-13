@@ -1,0 +1,14 @@
+extends ../views/layouts/default
+
+block content
+    include ../data/article
+    include ../blocks/components/article-info/index
+    include ../blocks/components/description/index
+    include ../blocks/components/comment/index
+    include ../blocks/components/banner/index
+
+
+    +description(description.title, description.content, description.blockList)
+    +comment(comment.title, true, comment.list, true)
+    include ../blocks/components/article-similar/index
+    +banner(banner,true)

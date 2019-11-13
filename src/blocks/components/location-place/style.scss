@@ -1,0 +1,30 @@
+.location-place {
+  &__img {
+    position: relative;
+    min-height: 150px;
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__block {
+    position: relative;
+    margin: 24px 0 16px;
+  }
+
+  &__name {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #151d3f;
+  }
+
+  &__city {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #9a9a9e;
+  }
+}

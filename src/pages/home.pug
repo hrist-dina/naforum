@@ -1,0 +1,19 @@
+extends ../views/layouts/default
+block calendar
+        include ../blocks/components/calendar/index
+        +calendar(checkboxList, true)
+block content
+        include ../data/home
+        include ../blocks/components/developments/index
+        include ../blocks/components/banner/index
+        include ../blocks/components/rating/index
+
+        include ../blocks/components/top-section/index
+        include ../blocks/components/master-class/index
+        +developments(developments.title, developments.list)
+        include ../blocks/components/slider-expert/index
+        +rating(rating.title, rating.list, true)
+        include ../blocks/components/event-organizer/index
+        include ../blocks/components/promotion/index
+        include ../blocks/components/slider-places/index
+        +banner(banner)

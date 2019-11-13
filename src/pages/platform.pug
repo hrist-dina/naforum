@@ -1,0 +1,13 @@
+extends ../views/layouts/default
+block content
+    include ../data/platform
+    include ../blocks/components/title/index
+    include ../blocks/components/select/index
+    include ../blocks/components/banner/index
+    include ../blocks/components/card/index
+
+
+    +title('Площадки')
+    +select(select, 'js-select2-purple', 'Ваш город')
+    +card(false, card.list, true, true)
+    +banner(banner, true)

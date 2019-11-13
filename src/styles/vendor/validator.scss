@@ -1,0 +1,44 @@
+@mixin border-error() {
+  border: 1px solid #ee3769;
+  box-sizing: border-box;
+}
+
+.validator {
+  &-error {
+    position: relative;
+    @include border-error;
+
+    &-message {
+      position: absolute;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 21px;
+      padding-top: 5px;
+      color: #ee3769;
+      padding-left: 18px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        border-bottom: 1px solid #ee3769;
+        border-left: 1px solid #ee3769;
+      }
+    }
+  }
+
+  & [type="submit"]:disabled {
+    opacity: 0.3;
+  }
+}
+
+body input.validator-error {
+  @include border-error;
+}
