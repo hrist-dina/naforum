@@ -2,22 +2,19 @@ mixin rating(title, list, showAll=false, whiteBgc=false, pagination=false)
     section.rating(class= whiteBgc ? 'rating_white-bg' : '')
         .container
             if title
-                .section__title=title
+                .section__title.rating__title=title
             ul.rating__list
                 for item, key in list
                     li.rating__item
-                        .rating__number=(key + 1)
                         .rating__item-inner
+                            .rating__number=(key + 1)
                             .rating__img
                                 img(src=item.img alt="")
-                            .rating__middle
-                                a.rating__link(href="#")=item.name
-                                .rating__city=item.city
-                                .rating__comments
-                                    span=item.comments
+                        .rating__middle
+                            a.rating__link(href="#")=item.name
+                            .rating__city=item.city
                         .rating__values
-                            .rating-circle
-                                span=item.rating
+                            span=item.rating
 
             if showAll
                 .button-link__wrap

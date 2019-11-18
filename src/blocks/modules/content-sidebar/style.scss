@@ -1,0 +1,15 @@
+.content-sidebar {
+  &__box {
+    @include row-flex();
+  }
+
+  & .content {
+    @include col();
+    @include size(8);
+  }
+
+  & .sidebar {
+    @include col();
+    @include size(4);
+  }
+}

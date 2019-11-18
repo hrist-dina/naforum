@@ -1,16 +1,32 @@
 .rating {
-  background: #f5f0f2;
-  margin-bottom: 25px;
+  background: $white;
+  border: 1px solid #e3e4e5;
+  box-sizing: border-box;
+  padding: 30px 20px;
 
   &_white-bg {
     background-color: $white;
   }
+
+  &__title {
+    width: 100%;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0f1226;
+  }
+
   &__link {
-    font-size: 16px;
-    text-decoration: none;
-    font-weight: normal;
-    color: $midnight-express;
+    font-size: 18px;
+    line-height: 24px;
+    color: #383b73;
     margin-bottom: 8px;
+    text-decoration: none;
+  }
+
+  &__list {
+    width: 100%;
   }
 
   &__item {
@@ -23,24 +39,25 @@
     &-inner {
       display: flex;
       align-items: center;
-      border-left: 2px solid $border-rating;
-      padding-left: 12px;
-      width: #{"calc(100% - 35px)"};
+      align-self: flex-start;
     }
   }
 
   &__number {
-    align-self: self-start;
-    font-size: 15px;
-    font-weight: bold;
-    color: #7c46d4;
-    padding-right: 5px;
+    align-self: center;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 23px;
+    color: #0f1226;
+    padding-right: 10px;
   }
 
   &__middle {
     display: flex;
     flex-direction: column;
-    width: #{"calc(100% - 55px)"};
+    width: #{"calc(100% - 120px)"};
+    padding-right: 10px;
+    box-sizing: border-box;
   }
 
   &__img {
@@ -54,10 +71,6 @@
       height: 100%;
       border-radius: 50%;
     }
-  }
-
-  &__middle {
-    display: flex;
   }
 
   &__city {
@@ -96,39 +109,19 @@
   &__values {
     position: relative;
     align-self: self-start;
-  }
-
-  &-circle {
-    position: absolute;
-    top: -26px;
-    right: 0;
-    width: 52px;
-    height: 52px;
-    background-image: url("../img/rating-mc-event.svg");
+    width: 40px;
+    height: 40px;
+    background: #ecb91d;
     display: flex;
     align-items: center;
     justify-content: center;
 
     & span {
       font-weight: 900;
-      font-size: 18px;
-      line-height: 28px;
+      font-size: 14px;
+      line-height: 18px;
       text-align: center;
-      color: #151d3f;
-      &:first-letter {
-        font-size: 22px;
-      }
-    }
-  }
-
-  &__values &-circle {
-    background-size: 46px;
-    width: 46px;
-    height: 46px;
-    top: 0;
-
-    span {
-      font-size: 18px;
+      color: $white;
     }
   }
 }

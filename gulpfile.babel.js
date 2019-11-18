@@ -128,13 +128,13 @@ export const smartGrid = cb => {
     outputStyle: "scss",
     filename: "_smart-grid",
     columns: 12, // number of grid columns
-    offset: "30px", // gutter width
+    offset: "24px", // gutter width
     mobileFirst: true,
     mixinNames: {
       container: "container"
     },
     container: {
-      fields: "15px" // side fields
+      fields: "12px" // side fields
     },
     breakPoints: {
       xs: {
