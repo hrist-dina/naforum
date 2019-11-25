@@ -18,7 +18,12 @@ body {
   @include desktop {
     display: flex;
     flex-direction: column;
-    padding: 40px 50px 0 50px;
+    padding: 40px 0 0 0;
+  }
+
+  &-inner {
+    max-width: 1410px;
+    padding: 0 50px;
   }
 }
 
@@ -27,7 +32,6 @@ body {
   @include desktop {
     width: #{"calc(100% - #{$desktop-calendar-width})"};
     margin-left: $desktop-calendar-width;
-    max-width: 1410px;
   }
 }
 
@@ -121,7 +125,7 @@ body {
     line-height: 20px;
     color: $night-rider;
     padding-bottom: 7px;
-    border-bottom: 3px solid #6441a5;
+    border-bottom: 3px solid #9768D1;;
     margin-bottom: 10px;
   }
 }
@@ -179,6 +183,40 @@ body {
   font-weight: 500;
   display: inline-block;
   padding: 10px 40px;
+}
+
+.button-more {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #151D3F;
+  padding-top: 52px;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    margin: auto;
+    background: #C4C4C4;
+  }
+
+  &:before {
+    width: 3px;
+    height: 40px;
+  }
+
+  &:after {
+    top: 18px;
+    width: 40px;
+    height: 3px;
+  }
 }
 
 .back-page {
@@ -240,26 +278,26 @@ body {
   &__list {
     margin-top: 11px;
     list-style-type: none;
-    margin-right: -15px;
+    @include row-flex();
   }
 
-  &__img {
-    max-height: 165px;
 
+  &__img {
+    height: 168px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     & img {
-      height: 100%;
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
     }
   }
 
   &__item {
-    display: inline-block;
-    margin-right: 10px;
-    max-width: 320px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    @include col();
+    @include size(3);
+    @include outline-none();
   }
 
   & .slick-dots {

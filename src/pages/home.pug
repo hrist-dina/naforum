@@ -1,8 +1,9 @@
 extends ../views/layouts/default
 block calendar
-        include ../blocks/components/calendar/index
-        +calendar(checkboxList, true)
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
 block content
+    .wrapper-inner
         include ../data/home
         include ../blocks/modules/content-sidebar/index
         include ../blocks/components/master-class/index
@@ -18,9 +19,10 @@ block content
             article.sidebar
                 +rating(rating.title, rating.list, true)
 
-        +developments(developments.title, developments.list)
         include ../blocks/components/slider-expert/index
-        include ../blocks/components/event-organizer/index
+
+    +developments(developments.title, developments.list)
+    .wrapper-inner
         include ../blocks/components/promotion/index
         include ../blocks/components/slider-places/index
-        +banner(banner)
+        +banner(banner, true)

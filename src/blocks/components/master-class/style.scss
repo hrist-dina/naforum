@@ -145,6 +145,7 @@
 
     &__list {
       @include row-flex();
+      margin-bottom: 10px;
     }
 
     &__inner {
@@ -219,7 +220,7 @@
       display: block;
       margin-top: 15px;
       font-size: 22px;
-      line-height: 30px;
+      line-height: 27px;
       color: #383b73;
       font-weight: bold;
       font-style: normal;
@@ -240,6 +241,10 @@
         color: #3f3f3f;
         font-weight: 700;
       }
+    }
+
+    &__button {
+      margin-top: 20px;
     }
   }
 }

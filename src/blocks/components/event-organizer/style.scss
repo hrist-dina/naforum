@@ -1,19 +1,49 @@
 .event-organizer {
-  background: #f5f0f2;
+  padding: 45px 35px;
+  box-sizing: border-box;
+  background: center no-repeat
+      linear-gradient(
+        90deg,
+        rgba(88, 53, 145, 0.8) 0%,
+        rgba(59, 24, 97, 0.8) 100%
+      ),
+    url("../img/event-organizer/bg.png");
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 273px;
+    height: 341px;
+    right: -110px;
+    top: -70px;
+    background: url("../img/event-organizer/phone.png") center no-repeat;
+    background-size: contain;
+  }
+
+  &__desc,
+  &__title {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 36px;
+    color: #fff;
+  }
 
   &__title {
-    padding-top: 45px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 22px;
-    line-height: 31px;
-    text-align: center;
-    color: $midnight-express;
+    font-weight: 900;
+  }
+
+  &__desc {
+    margin-top: 10px;
   }
 }
 
 .button {
   &-event-organizer {
-    margin-top: 9px;
+    width: auto;
+    margin-top: 50px;
+    text-transform: uppercase;
+    padding: 17px 25px 13px;
   }
 }

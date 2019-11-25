@@ -140,7 +140,14 @@ $(document).ready(function() {
     dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: "unslick"
+      }
+    ]
   });
 
   $(".js-slider-places").slick({
@@ -150,7 +157,14 @@ $(document).ready(function() {
     dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: "unslick"
+      }
+    ]
   });
 
   $(".js-event-slider").slick({

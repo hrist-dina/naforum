@@ -1,37 +1,16 @@
+include data
+
 section.slider-content.slider-expert
     .container
         .section__title Колонка эксперта
         ul.slider-content__list.js-slider-expert
-            li.slider-content__item
-                .slider-content__img
-                    img(src="pictures/slider-expert-1.jpg" alt="")
-                .slider-expert__info
-                    .slider-expert__info-date 23 сентября 2018
-                    .slider-expert__info-title 
-                        |Как управлять сложными подчиненными
-                    .slider-expert__info-bottom
-                        .slider-expert__info-leading Максим Батырев
-                        .slider-expert__info-reviews
-                            span 23
-            li.slider-content__item
-                .slider-content__img
-                    img(src="pictures/slider-expert-2.jpg" alt="")
-                .slider-expert__info
-                    .slider-expert__info-date 23 сентября 2018
-                    .slider-expert__info-title 
-                        |Как управлять сложными подчиненными
-                    .slider-expert__info-bottom
-                        .slider-expert__info-leading Максим Батырев
-                        .slider-expert__info-reviews
-                            span 23
-            li.slider-content__item
-                .slider-content__img
-                    img(src="pictures/slider-expert-1.jpg" alt="")
-                .slider-expert__info
-                    .slider-expert__info-date 23 сентября 2018
-                    .slider-expert__info-title 
-                        |Как управлять сложными подчиненными
-                    .slider-expert__info-bottom
-                        .slider-expert__info-leading Максим Батырев
-                        .slider-expert__info-reviews
-                             span 23
+            for item in experts
+                li.slider-content__item
+                    .slider-content__img(style=`background-image: url(${item.img})`)
+                    .slider-expert__info
+                        .slider-expert__info-leading=item.leading
+                        .slider-expert__info-title=item.title
+                        .slider-expert__info-bottom
+                            .slider-expert__info-date=item.date
+                            .slider-expert__info-reviews
+                                span=item.reviews

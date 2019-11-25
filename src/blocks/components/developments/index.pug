@@ -1,15 +1,19 @@
 mixin developments(title, list, showAll = false)
     section.developments
-        .container
-            .section__title=title
-            ul.developments__list
-                each item in list
-                    li.developments__item
-                        a.developments__link(href="#")=item.text
-                        .developments-bottom
-                            .developments-tag=item.tag
-                            .developments-date=item.date
-        if showAll
-            .button-link__wrap
-                a.button-link(href="#") Показать все
-
+        .wrapper-inner
+            .container
+                .section__title=title
+                ul.developments__list
+                    for item in list
+                        li.developments__item
+                            .developments__inner
+                                .developments__content
+                                    .developments__date=item.date
+                                    .developments__city=item.city
+                                    .developments__title=item.text
+                                ul.developments__tags
+                                    for tag in item.tags
+                                        li(class=tag.color)=tag.label
+            if showAll
+                    .button-link__wrap
+                        a.button-link(href="#") Показать все

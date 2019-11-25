@@ -1,4 +1,5 @@
 .content-sidebar {
+  margin-bottom: 20px;
   &__box {
     @include row-flex();
   }
