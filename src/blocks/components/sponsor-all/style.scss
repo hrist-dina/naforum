@@ -1,13 +1,18 @@
 .sponsor-all {
   &__list {
+    @include row-flex();
     list-style-type: none;
+    margin-top: 48px;
   }
 
   &__item {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #e3e4e5;
-    padding: 16px 0;
+    @include col();
+    @include size(6);
+    // padding: 16px 0;
+    margin-bottom: 24px;
+    border: 2px solid #E3E4E5;
+    box-sizing: border-box;
+    height: 192px;
   }
 
   &__middle {
@@ -15,40 +20,42 @@
   }
 
   &__name {
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-    color: #151d3f;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #383B73;
     text-decoration: none;
   }
 
   &__city {
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 300;
-    color: #9a9a9e;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: normal;
+    color: #9A9A9E;
   }
 
   &__activity {
-    font-size: 12px;
-    line-height: 16px;
-    font-style: italic;
-    color: #ee3769;
-    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #9768D1;
+    font-weight: normal;
+    text-decoration: underline;
   }
 
   &__img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    margin-right: 25px;
 
     & img {
+      max-width: 105px;
+      max-height: 105px;
       width: 100%;
       height: 100%;
+      border-radius: 50%;
     }
   }
 
   &-inner {
+    padding: 32px;
     display: flex;
     align-items: center;
   }
