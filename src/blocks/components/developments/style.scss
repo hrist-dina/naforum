@@ -12,7 +12,7 @@
     @include col();
     @include size(6);
     border-bottom: 1px solid #e3e4e5;
-    padding: 20px;
+    padding: 20px 0;
     box-sizing: border-box;
 
     &:first-child {

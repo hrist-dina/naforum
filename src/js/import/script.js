@@ -151,18 +151,19 @@ $(document).ready(function() {
   });
 
   $(".js-slider-places").slick({
+    prevArrow: $(".js-slider-places-prev"),
+    nextArrow: $(".js-slider-places-next"),
     rows: 0,
-    arrows: false,
+    arrows: true,
     infinite: false,
-    dots: true,
-    slidesToShow: 1,
+    dots: false,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    variableWidth: true,
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 1400,
-        settings: "unslick"
+        breakpoint: 1400
+        // settings: "unslick"
       }
     ]
   });

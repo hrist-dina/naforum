@@ -1,4 +1,8 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
 block content
     include ../data/organizer
     include ../blocks/components/info/index

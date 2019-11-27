@@ -18,12 +18,15 @@ body {
   @include desktop {
     display: flex;
     flex-direction: column;
-    padding: 40px 0 0 0;
+    padding: 40px 0 50px 0;
   }
 
   &-inner {
     max-width: 1410px;
-    padding: 0 50px;
+    margin-left: 58px;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0 12px;
   }
 }
 
@@ -100,7 +103,6 @@ body {
 .container {
   max-width: 1200px;
   box-sizing: border-box;
-  padding: 0 12px;
   margin: 0 auto 0 0;
 }
 
@@ -271,7 +273,58 @@ body {
 
 // slider-content
 
+.slider {
+
+  &-wrap {
+    margin-top: 24px;
+  }
+
+  &-arrows {
+    position: absolute;
+    right: 7px;
+    top: -4px;
+  }
+
+  &-prev,
+  &-next {
+    @extend %fa-icon;
+    @extend .fas;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #3F3F3F;
+    text-decoration: none;
+    cursor: pointer;
+
+    &.slick-disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+
+  &-prev {
+    margin-right: 6px;
+  }
+
+  &-prev::before {
+    content: $fa-var-chevron-left;
+  }
+
+  &-next::before {
+    content: $fa-var-chevron-right;
+  }
+}
+
+
 .slider-content {
+
+  & .container {
+    position: relative;
+  }
   padding-top: 25px;
   padding-bottom: 20px;
 
@@ -298,6 +351,11 @@ body {
     @include col();
     @include size(3);
     @include outline-none();
+
+    & a {
+      text-decoration: none;
+      @include outline-none()
+    }
   }
 
   & .slick-dots {

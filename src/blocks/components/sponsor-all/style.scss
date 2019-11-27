@@ -1,16 +1,19 @@
 .sponsor-all {
+  & .pagination {
+    margin-top: 56px;
+  }
+
   &__list {
-    @include row-flex();
+    @include u-row-flex(30px);
     list-style-type: none;
     margin-top: 48px;
   }
 
   &__item {
-    @include col();
-    @include size(6);
-    // padding: 16px 0;
+    @include u-col(30px);
+    @include u-size(6, $columns, 30px);
     margin-bottom: 24px;
-    border: 2px solid #E3E4E5;
+    border: 2px solid #e3e4e5;
     box-sizing: border-box;
     height: 192px;
   }
@@ -23,7 +26,7 @@
     font-size: 22px;
     line-height: 30px;
     font-weight: bold;
-    color: #383B73;
+    color: #383b73;
     text-decoration: none;
   }
 
@@ -31,13 +34,13 @@
     font-size: 15px;
     line-height: 15px;
     font-weight: normal;
-    color: #9A9A9E;
+    color: #9a9a9e;
   }
 
   &__activity {
     font-size: 14px;
     line-height: 24px;
-    color: #9768D1;
+    color: #9768d1;
     font-weight: normal;
     text-decoration: underline;
   }
