@@ -107,9 +107,9 @@ body {
 }
 
 .h1 {
-  font-size: 22px;
-  font-weight: bold;
-  color: $midnight-express;
+  font-size: 40px;
+  line-height: 50px;
+  color: #151D3F;
 }
 
 .overflow-hidden {
@@ -261,6 +261,16 @@ body {
       content: none;
     }
   }
+}
+
+.link {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  text-decoration: none;
+  color: #9768D1;
+  padding-bottom: 2px;
+  border-bottom: 0.5px solid rgba(151, 104, 209, 0.5);
 }
 
 .overflow-hidden {

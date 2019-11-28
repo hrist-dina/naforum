@@ -6,6 +6,7 @@ import Validator from "../classes/Validator";
 import Calendar from "../classes/Calendar";
 import Inputmask from "inputmask/dist/inputmask/inputmask.numeric.extensions";
 import Modal from "../classes/Modal";
+import { Select } from "../../blocks/components/select/Select";
 
 $(document).ready(function() {
   let contactForm = new Validator(".js-contact-form");
@@ -100,17 +101,9 @@ $(document).ready(function() {
     theme: "minimal"
   });
 
-  $(".js-select2-purple").select2({
-    minimumResultsForSearch: Infinity,
-    theme: "naforum-purple",
-    width: "resolve"
-  });
+  new Select(".js-select2-purple", "naforum-purple");
 
-  $(".js-select2-bunting").select2({
-    minimumResultsForSearch: Infinity,
-    theme: "naforum-bunting",
-    width: "resolve"
-  });
+  new Select(".js-select2-bunting", "naforum-bunting");
 
   $(".js-select2-bunting").on("select2:open", function() {
     setTimeout(function() {

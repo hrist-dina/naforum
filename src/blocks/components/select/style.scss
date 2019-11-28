@@ -2,36 +2,39 @@
 .select2-container--naforum-bunting {
   display: block;
 
-  & > .select2-results__options {
-    border: 1px solid $purple-light;
+  & .select2-results__options {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
   & .select2-results__option {
-    padding: 10px 30px 10px 15px;
-    background-color: $white;
-    color: $eclipse;
-    border-bottom: 1px solid $purple-light;
+    padding: 10px 30px 8px 12px;
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 18px;
+    color: #3f3f3f;
 
     &:hover {
-      background-color: $purple-light;
-      color: $white;
+      background-color: #9768d1;
+      color: #fff;
     }
   }
 
   & .select2-selection--single {
     width: 100%;
-    padding: 10px 30px 10px 15px;
-    border: 1px solid $purple-light;
-    height: 44px;
+    padding: 9px 30px 10px 4px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #e3e4e5;
+    height: 36px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: $white;
+    background-color: #fff;
     box-sizing: border-box;
     font-size: 16px;
+    line-height: 21px;
     color: $eclipse;
     outline: none;
-    line-height: 1.5;
 
     & .select2-selection__arrow {
       height: 100%;
@@ -47,7 +50,7 @@
         @extend %fa-icon;
         @extend .far;
         content: $fa-var-chevron-down;
-        color: $purple-light;
+        color: #151d3f;
         font-size: 15px;
       }
 
@@ -59,9 +62,12 @@
   }
 
   &.select2-container--open {
-    & .select2-selection--single .select2-selection__arrow {
-      &::before {
-        content: $fa-var-chevron-up;
+    & .select2-selection--single {
+      border-color: #6441a5;
+      & .select2-selection__arrow {
+        &::before {
+          content: $fa-var-chevron-up;
+        }
       }
     }
   }
@@ -69,30 +75,30 @@
 
 .select2-container--naforum-bunting {
   & > .select2-results__options {
-    border: 1px solid $white;
+    border: 1px solid #fff;
     background-color: $bunting;
   }
 
   & .select2-results__option {
     padding: 10px 30px 10px 15px;
     background-color: $bunting;
-    color: $white;
-    border-bottom: 1px solid $white;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 
     &:hover {
-      background-color: $white;
+      background-color: #fff;
       color: $bunting;
     }
   }
 
   & .select2-selection--single {
-    border: 1px solid $white;
+    border: 1px solid #fff;
     background-color: transparent;
-    color: $white;
+    color: #fff;
 
     & .select2-selection__arrow {
       &::before {
-        color: $white;
+        color: #fff;
       }
     }
   }
@@ -102,12 +108,23 @@
   margin-top: 20px;
   margin-bottom: 10px;
 
+  &-wrap {
+    display: flex;
+    align-items: center;
+  }
+
   &-label {
-    display: block;
-    font-size: 17px;
-    font-weight: 500;
-    color: $midnight-express;
-    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 16px;
+    color: #151d3f;
+    margin-right: 20px;
+
+    & ~ .select2 {
+      display: inline-block;
+      width: 80%;
+      max-width: 220px;
+    }
   }
 
   &-tag {
@@ -123,7 +140,7 @@
     background-position: #{"calc(100% - 15px)"} 1em, #{"calc(100% - 20px)"} 1em,
       #{"calc(100% - 2.5em)"} 0.5em;
     background-repeat: no-repeat;
-    background-color: $white;
+    background-color: #fff;
     box-sizing: border-box;
     font-size: 16px;
     color: $eclipse;
@@ -152,7 +169,7 @@
     }
 
     & option {
-      background: $white;
+      background: #fff;
       padding: 10px;
     }
   }

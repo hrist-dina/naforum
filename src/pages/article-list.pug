@@ -1,9 +1,13 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
+
 block content
     include ../data/article-list
     include ../blocks/components/title/index
-    include ../blocks/components/banner/index
 
-    +title('Статьи')
-    include ../blocks/components/article-list/index
-    +banner(banner, true)
+    .wrapper-inner
+        +title('Статьи')
+        include ../blocks/components/article-list/index

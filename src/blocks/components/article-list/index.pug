@@ -1,11 +1,22 @@
 include ../column/index
 include data
 
+mixin article-list(articleList)
+    ul.article-list
+        for item in articleList
+            li.article-list__item
+                a(href='#' style=`background-image: url(${item.img})`).article-list__img
+                .article-list__content
+                    a(href='#').link.article-list__author=item.author
+                    a(href='#').article-list__title=item.title
+                    .article-list__bottom
+                        .article-list__date=item.date
+                        .article-list__comments
+                            span=item.comment
 
-section.article-list
+section.article-list__section
     .container
-        +column(articleList)
-        .button-link__wrap
-            a.button-link(href="#") Показать еще
+        +article-list(articleList)
         include ../pagination/index
-        
+
+
