@@ -6,8 +6,7 @@ mixin card(title, list, showAll=false, pagination=false)
             ul.card__list
                 for item in list
                     li.card__item
-                        .card__img
-                            img(src=item.img alt="")
+                        a(href='#').card__img(style=`background-image: url(${item.img})`)
                         .card__name
                             a(href="#")=item.name
                         .card__city=item.city
