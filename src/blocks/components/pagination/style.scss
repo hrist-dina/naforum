@@ -10,25 +10,32 @@
     font-size: 0;
   }
 
-  &__prev,
-  &__next {
-    @extend %fa-icon;
-    @extend .far;
+  &__item {
+    padding-top: 5px;
   }
 
   &__item,
   &__prev,
   &__next {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     box-sizing: border-box;
     margin-right: 4px;
     font-size: 16px;
-    line-height: 34px;
+    line-height: 21px;
     text-align: center;
     color: $eclipse;
     text-decoration: none;
+  }
+
+  &__prev,
+  &__next {
+    @extend %fa-icon;
+    @extend .fal;
+    font-size: 26px;
   }
 
   &__item:hover:not(.active) {

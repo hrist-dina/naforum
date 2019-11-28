@@ -1,5 +1,5 @@
-mixin select(options, jsClass=false, label=false)
-    section.select
+mixin select(options, jsClass=false, label=false, modifacator=false)
+    section.select(class=modifacator ? modifacator : '')
         .container
             .select-wrap
                 if label

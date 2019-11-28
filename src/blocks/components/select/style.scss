@@ -22,7 +22,7 @@
 
   & .select2-selection--single {
     width: 100%;
-    padding: 9px 30px 10px 4px;
+    padding: 9px 25px 10px 4px;
     border: 1px solid transparent;
     border-bottom: 1px solid #e3e4e5;
     height: 36px;
@@ -36,12 +36,16 @@
     color: $eclipse;
     outline: none;
 
+    & .select2-selection__rendered {
+      padding-right: 10px;
+    }
+
     & .select2-selection__arrow {
       height: 100%;
       position: absolute;
       top: 1px;
       right: 1px;
-      width: 50px;
+      width: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,7 +55,7 @@
         @extend .far;
         content: $fa-var-chevron-down;
         color: #151d3f;
-        font-size: 15px;
+        font-size: 14px;
       }
 
       & b {

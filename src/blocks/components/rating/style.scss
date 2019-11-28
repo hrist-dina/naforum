@@ -107,21 +107,6 @@
   }
 
   &__values {
-    position: relative;
-    align-self: self-start;
-    width: 40px;
-    height: 40px;
-    background: #ecb91d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & span {
-      font-weight: 900;
-      font-size: 14px;
-      line-height: 18px;
-      text-align: center;
-      color: $white;
-    }
+    @extend .icon-rating;
   }
 }

@@ -1,0 +1,16 @@
+mixin rating-list(list,  pagination=false)
+    section.rating-list
+        .container
+            ul.rating-list__box
+                for item, key in list
+                    li.rating-list__item
+                        .rating-list__item-inner
+                            a(href='#').rating-list__img
+                                img(src=item.img alt=item.name)
+                        .rating-list__middle
+                            a.rating-list__link(href="#")=item.name
+                            .rating-list__city=item.city
+                        .rating-list__values
+                            span=item.rating
+            if pagination
+                include ../pagination/index

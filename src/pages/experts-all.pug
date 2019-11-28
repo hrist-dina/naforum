@@ -1,13 +1,16 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
+
 block content
     include ../data/experts-all
     include ../blocks/components/title/index
     include ../blocks/components/select/index
-    include ../blocks/components/banner/index
-    include ../blocks/components/rating/index
+    include ../blocks/components/rating-list/index
 
-
-    +title('Эксперты')
-    +select(select, 'js-select2-purple')
-    +rating(rating.title, rating.list, true, true, true)
-    +banner(banner, true)
+    .wrapper-inner
+        +title('Эксперты')
+        +select(select, 'js-select2-purple', false, 'rating-list__sort')
+        +rating-list(rating.list, true)
