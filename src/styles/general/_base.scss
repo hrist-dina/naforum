@@ -11,6 +11,12 @@ body {
   color: #9a9a9e;
 }
 
+main > section {
+  &:first-child {
+    padding-top: 40px;
+  }
+}
+
 .wrapper {
   background-color: $white;
   box-sizing: border-box;
@@ -18,7 +24,7 @@ body {
   @include desktop {
     display: flex;
     flex-direction: column;
-    padding: 40px 0 50px 0;
+    padding: 0 0 50px 0;
   }
 
   &-inner {
@@ -103,7 +109,7 @@ body {
 .container {
   max-width: 1200px;
   box-sizing: border-box;
-  margin: 0 auto 0 0;
+  margin: 0 auto;
 }
 
 .h1 {
