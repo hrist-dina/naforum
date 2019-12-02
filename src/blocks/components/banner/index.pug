@@ -3,6 +3,10 @@ mixin banner(list)
         .wrapper-inner
             .container
                 .banner__list
-                    each item in list
-                        .banner__item
-                            img(src=item, alt="")
+                    if list && list.length > 1
+                        each item in list
+                            .banner__item
+                                img(src=item, alt="")
+                    else
+                        .banner__full
+                            img(src=list[0], alt="")

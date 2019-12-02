@@ -3,26 +3,24 @@ block calendar
     include ../blocks/components/calendar/index
     +calendar(checkboxList, true)
 block content
-    .wrapper-inner
-        include ../data/home
-        include ../blocks/modules/content-sidebar/index
-        include ../blocks/components/master-class/index
-        include ../blocks/components/developments/index
-        include ../blocks/components/banner/index
-        include ../blocks/components/rating/index
+    include ../data/home
+    include ../blocks/modules/content-sidebar/index
+    include ../blocks/components/master-class/index
+    include ../blocks/components/developments/index
+    include ../blocks/components/banner/index
+    include ../blocks/components/rating/index
 
-        include ../blocks/components/top-section/index
-        +master-class-top
-        +content-sidebar
-            article.content
-                +master-class
-            article.sidebar
-                +rating(rating.title, rating.list, true)
+    include ../blocks/components/top-section/index
+    +master-class-top
+    +content-sidebar
+        article.content
+            +master-class
+        article.sidebar
+            +rating(rating.title, rating.list, true)
 
-        include ../blocks/components/slider-expert/index
+    include ../blocks/components/slider-expert/index
 
     +developments(developments.title, developments.list)
-    .wrapper-inner
-        include ../blocks/components/promotion/index
-        include ../blocks/components/slider-places/index
-        +banner(banner, true)
+    include ../blocks/components/promotion/index
+    include ../blocks/components/slider-places/index
+    +banner(banner, true)

@@ -155,7 +155,6 @@
     }
 
     &__top {
-      flex: 1 0 auto;
       padding: 25px 25px 4px;
       box-sizing: border-box;
     }
@@ -163,6 +162,7 @@
     &__content {
       padding: 0 25px 18px;
       box-sizing: border-box;
+      flex: 1 0 auto;
     }
 
     &__bottom {

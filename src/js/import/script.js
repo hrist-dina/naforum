@@ -170,46 +170,4 @@ $(document).ready(function() {
     slidesToScroll: 1,
     variableWidth: true
   });
-
-  if ($("#js-map").length) {
-    ymaps.ready(init);
-  }
-
-  function init() {
-    var map = new ymaps.Map(
-      // ID DOM-элемента, в который будет добавлена карта.
-      "js-map",
-      // Параметры карты.
-      {
-        // Географические координаты центра отображаемой карты.
-        center: [54.98, 82.89],
-        // Масштаб.
-        zoom: 16,
-        // Элементы управления
-        controls: ["zoomControl"]
-      }
-    );
-
-    map.behaviors.disable("scrollZoom");
-
-    var myPlacemark = new ymaps.Placemark(
-      [54.98, 82.89],
-      {
-        hintContent: "Собственный значок метки с контентом",
-        balloonContent: "А эта — новогодняя",
-        iconContent: "12"
-      },
-      {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: "default#image",
-        // Своё изображение иконки метки.
-        iconImageHref: "/img/map-balloon.svg",
-        // Размеры метки.
-        iconImageSize: [52, 53]
-      }
-    );
-
-    map.geoObjects.add(myPlacemark);
-  }
 });

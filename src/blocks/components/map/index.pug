@@ -1,2 +1,13 @@
-section.map#js-map
-   
+section.map
+    .wrapper-inner
+        .container
+            // data-center-x data-center-y - не обязательные параметры, если не указывать то подставятся данные из координат
+            // data-zoom - не обазятельный, по умолчанию = 16
+            .map__inner#js-map(
+                data-hint='Барнаул, пр. Калинина, 2'
+                data-coord-x='53.3554170710941'
+                data-coord-y='83.77105349999998'
+                data-center-x='53.35544274657723'
+                data-center-y='83.76831764680479'
+                data-zoom='17'
+            )

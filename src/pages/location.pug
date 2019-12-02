@@ -1,4 +1,9 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
+
 block content
     include ../data/location
     include ../blocks/components/info/index
@@ -10,5 +15,5 @@ block content
     +info(info.list, info.addButton)
     +description(description.title, description.content, description.blockList)
     include ../blocks/components/map/index
-    +developments(developments.title, developments.list, true)
-    +banner(banner, true)
+    +developments(developments.title, developments.list, false)
+    +banner(banner)

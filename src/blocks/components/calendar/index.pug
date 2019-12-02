@@ -5,7 +5,7 @@ include ../../modules/footer/footer
 
 mixin calendar(checkboxList, showCalendar=false)
     .calendar.js-calendar(class=showCalendar ? 'show' : '')
-        form
+        form.calendar__form
             .container
                 .calendar__top
                     .calendar__date

@@ -1,19 +1,20 @@
 section.slider-content.slider-places
-    .container
-        .section__title Лучшие места
-        .slider-wrap
-            .slider-arrows
-                .slider-prev.js-slider-places-prev
-                .slider-next.js-slider-places-next
-            ul.slider-content__list.js-slider-places
-                - let i = 0;
-                while i < 8
-                    li.slider-content__item
-                        a(href='#')
-                            .slider-content__img(style='background-image: url(pictures/slider-places-1.jpg)')
-                            .slider-places__info
-                                .slider-places__info-title
-                                    |Конференц-зал Сибирской медиагруппы
-                                .slider-places__info-bottom
-                                    .slider-places__info-address Барнаул, ул. Короленко, 51
-                    - i++;
+    .wrapper-inner
+        .container
+            .section__title Лучшие места
+            .slider-wrap
+                .slider-arrows
+                    .slider-prev.js-slider-places-prev
+                    .slider-next.js-slider-places-next
+                ul.slider-content__list.js-slider-places
+                    - let i = 0;
+                    while i < 8
+                        li.slider-content__item
+                            a(href='#')
+                                .slider-content__img(style='background-image: url(pictures/slider-places-1.jpg)')
+                                .slider-places__info
+                                    .slider-places__info-title
+                                        |Конференц-зал Сибирской медиагруппы
+                                    .slider-places__info-bottom
+                                        .slider-places__info-address Барнаул, ул. Короленко, 51
+                        - i++;

@@ -1,7 +1,10 @@
 .description {
   margin-top: 50px;
   margin-bottom: 50px;
-  max-width: 790px;
+
+  &__inner {
+    max-width: 790px;
+  }
 
   &__content {
     margin-top: 24px;

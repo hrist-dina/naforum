@@ -31,10 +31,11 @@ mixin mc-card(card)
 
 mixin master-class-top
     section.master-class-top
-        .container
-            .mc-card__list
-                for card in mcCardList.cardWithPic
-                    +mc-card(card)
+        .wrapper-inner
+            .container
+                .mc-card__list
+                    for card in mcCardList.cardWithPic
+                        +mc-card(card)
 mixin master-class
     .master-class
         .mc-card__list

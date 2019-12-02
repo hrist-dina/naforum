@@ -42,6 +42,9 @@
 
   &-right {
     text-align: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   &-bgc {
@@ -50,7 +53,10 @@
 
     @include desktop {
       background: $bunting;
-      padding-top: 25px;
+      padding-top: 32px;
+      padding-bottom: 15px;
+      height: 80px;
+      box-sizing: border-box;
 
       & > .container {
         padding: $desktop-calendar-padding;
@@ -62,6 +68,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include desktop {
+      height: 36px;
+    }
   }
 
   &-logo {
@@ -89,23 +99,43 @@
     }
   }
 
-  &-favorites {
-    @extend %fa-icon;
-    @extend .fas;
-    font-size: 16px;
-    color: $white;
+  &-lk {
+    width: 20px;
+    height: 21px;
+    background: no-repeat center url(icon-user());
+    background-size: contain;
     text-decoration: none;
-    margin-left: 15px;
+    display: inline-block;
+    margin-right: 18px;
+  }
 
-    & span {
-      font-family: "HelveticaNeueCyr";
-      font-weight: normal;
-      font-size: 14px;
-      margin-left: 5px;
-    }
+  &-favorites {
+    position: relative;
+    right: -40px;
+    display: inline-block;
+    padding-top: 5px;
+    padding-right: 9px;
+    font-size: 18px;
+    line-height: 1;
+    text-align: right;
+    color: #fff;
+    text-decoration: none;
+    z-index: 0;
 
     &:before {
-      content: $fa-var-bookmark;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: auto;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-width: 16px 60px 16px 10px;
+      border-style: solid;
+      border-color: #9768d1 #9768d1 #9768d1 transparent;
+      z-index: -1;
     }
   }
 }

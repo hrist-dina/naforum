@@ -1,12 +1,14 @@
 .location-place {
+  &:first-child {
+    padding-top: 0;
+  }
   &__img {
+    width: 100%;
     position: relative;
-    min-height: 150px;
-
-    & img {
-      height: 100%;
-      width: 100%;
-    }
+    min-height: 468px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   &__block {
@@ -15,10 +17,7 @@
   }
 
   &__name {
-    font-size: 22px;
-    line-height: 28px;
-    font-weight: bold;
-    color: #151d3f;
+    margin: 0;
   }
 
   &__city {
