@@ -1,4 +1,9 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
+
 block content
     include ../data/expert-event
     include ../blocks/components/description/index
@@ -8,7 +13,6 @@ block content
 
     include ../blocks/components/expert-info/index
     +description(description.title, description.content, description.blockList)
-    +developments(developments.title, developments.list, true)
-    include ../blocks/components/expert-column/index
+    +developments(developments.title, developments.list, false)
+    include ../blocks/components/slider-expert/index
     +comment(comment.title, false, comment.list, false)
-    +banner(banner, true)

@@ -55,20 +55,51 @@ $(document).ready(function() {
       year: 2019,
       months: [
         {
-          number: 4,
+          number: 11,
           days: [
             {
-              number: 2,
+              number: 25,
               events: ["orange", "green", "skyblue", "purple"]
             },
             {
-              number: 5,
+              number: 28,
               events: ["orange", "green", "skyblue", "purple"]
             }
           ]
         },
         {
-          number: 5,
+          number: 12,
+          days: [
+            {
+              number: 10,
+              events: ["orange", "green", "skyblue", "purple"]
+            },
+            {
+              number: 15,
+              events: ["orange", "green", "skyblue", "purple"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      year: 2020,
+      months: [
+        {
+          number: 1,
+          days: [
+            {
+              number: 4,
+              events: ["orange", "green", "skyblue", "purple"]
+            },
+            {
+              number: 11,
+              events: ["orange", "green", "skyblue", "purple"]
+            }
+          ]
+        },
+        {
+          number: 2,
           days: [
             {
               number: 10,
