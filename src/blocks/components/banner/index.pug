@@ -1,7 +1,8 @@
-mixin banner(list, whiteBg=false)
-    section.banner(class=whiteBg ? "banner_white-bg" : "")
-        .container
-            .banner__list
-            each item in list
-                .banner__banner
-                    img(src=item, alt="")
+mixin banner(list)
+    section.banner
+        .wrapper-inner
+            .container
+                .banner__list
+                    each item in list
+                        .banner__item
+                            img(src=item, alt="")

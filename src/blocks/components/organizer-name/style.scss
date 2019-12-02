@@ -2,8 +2,15 @@
   main > &:first-child {
     padding-top: 0;
   }
-  background: linear-gradient(141.24deg, #6441a5 0.44%, #2a0845 90.38%);
-  margin-bottom: 60px;
+
+  & .wrapper-inner {
+    overflow: inherit;
+  }
+
+  &__bg {
+    padding-top: 130px;
+    background: linear-gradient(141.24deg, #6441a5 0.44%, #2a0845 90.38%);
+  }
 
   &__img {
     max-width: 220px;
@@ -28,14 +35,11 @@
   }
 
   &__block {
-    position: relative;
-    margin: 25px 0 15px;
+    margin-top: 115px;
+    margin-bottom: 18px;
   }
 
   &__name {
-    font-size: 22px;
-    line-height: 28px;
-    font-weight: bold;
-    color: #151d3f;
+    margin: 0;
   }
 }

@@ -1,6 +1,5 @@
 .info {
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding: 36px 0;
   background: #f0f0f2;
 
   &__list {
@@ -9,6 +8,7 @@
 
   &__row {
     margin-bottom: 15px;
+    display: flex;
 
     &:last-child {
       margin-bottom: 0;
@@ -17,16 +17,19 @@
 
   &__text {
     margin-right: 5px;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 20px;
     color: #9a9a9e;
+    min-width: 150px;
   }
 
   &__content {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 16px;
+    line-height: 20px;
     color: #3f3f3f;
+  }
+
+  &__add {
+    width: auto;
   }
 }

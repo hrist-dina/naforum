@@ -1,11 +1,14 @@
 mixin info(list, addButton)
     section.info
-        .container
-            .info__list
-            for item in list
-                .info__row
-                    span.info__text=item.text
-                    span.info__content=item.content
-        
-            .button__wrap
+        .wrapper-inner
+            .container
+                .info__list
+                    for item in list
+                        .info__row
+                            span.info__text=item.text
+                            if item.isLink
+                                span.info__content
+                                    a.link(href='#')=item.content
+                            else
+                                span.info__content=item.content
                 a(href="#").button.info__add=addButton
