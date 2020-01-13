@@ -1,11 +1,16 @@
 .master-class-top {
-  margin-top: 40px;
-  margin-bottom: 36px;
+  margin-top: 20px;
+  margin-bottom: 16px;
   background-color: $white;
+
+  @include desktop {
+    margin-top: 40px;
+    margin-bottom: 36px;
+  }
 
   & .mc-card {
     @include col();
-    @include size(6);
+    @include size(12);
     height: 420px;
     padding: 24px 20px 30px;
     box-sizing: border-box;
@@ -15,6 +20,17 @@
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
+    margin-bottom: 16px;
+    @include desktop {
+      @include size(6);
+    }
+
+    &__list {
+      margin-bottom: -16px;
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
 
     &:before {
       content: "";
@@ -129,15 +145,23 @@
   }
 }
 .master-class {
+  margin-bottom: 16px;
+  @include desktop {
+    margin-bottom: 0;
+  }
   & .mc-card {
     position: relative;
     @include col();
-    @include u-size(4, 8, $offset);
+    @include u-size(8, 8, $offset);
     height: 240px;
     box-sizing: border-box;
     background: $white;
     border: 0.75px solid #e3e4e5;
     margin-bottom: 24px;
+
+    @include sm-block {
+      @include u-size(4, 8, $offset);
+    }
 
     &:hover {
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);

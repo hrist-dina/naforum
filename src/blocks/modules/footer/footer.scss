@@ -37,6 +37,10 @@
     display: block;
     margin-top: 50px;
 
+    @include mobile {
+      display: none;
+    }
+
     & .social {
       &__list {
         text-align: left;

@@ -128,6 +128,7 @@ $(document).ready(function() {
     advanced: {
       updateOnContentResize: true
     },
+    mouseWheelPixels: 75,
     live: true,
     theme: "minimal"
   });
@@ -158,18 +159,31 @@ $(document).ready(function() {
   });
 
   $(".js-slider-expert").slick({
+    prevArrow: $(".js-slider-places-prev"),
+    nextArrow: $(".js-slider-places-next"),
     rows: 0,
-    arrows: false,
+    arrows: true,
     infinite: false,
-    dots: true,
+    dots: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    variableWidth: true,
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 1400,
+        breakpoint: 1200,
         settings: "unslick"
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 2
+        }
       }
     ]
   });
@@ -181,13 +195,27 @@ $(document).ready(function() {
     arrows: true,
     infinite: false,
     dots: false,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 1400
-        // settings: "unslick"
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2
+        }
       }
     ]
   });

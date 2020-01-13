@@ -1,8 +1,14 @@
 .developments {
-  padding-top: 50px;
-  padding-bottom: 45px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: #f7f7f7;
-  margin-bottom: 72px;
+  margin-bottom: 35px;
+
+  @include tablet {
+    padding-top: 50px;
+    padding-bottom: 45px;
+    margin-bottom: 72px;
+  }
 
   &__list {
     @include row-flex();
@@ -11,10 +17,14 @@
 
   &__item {
     @include col();
-    @include size(6);
+    @include size(12);
     border-bottom: 1px solid #e3e4e5;
     padding: 20px 0;
     box-sizing: border-box;
+
+    @include sm-block {
+      @include size(6);
+    }
 
     &:first-child {
       margin-top: 0;

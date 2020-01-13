@@ -1,6 +1,19 @@
 .slider-expert {
-  padding-top: 25px;
-  padding-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @include desktop {
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+
+  & .slider-arrows {
+    display: block;
+
+    @include xl-block {
+      display: none;
+    }
+  }
 
   & .section__title {
     margin-bottom: 24px;

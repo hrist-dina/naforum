@@ -1,8 +1,11 @@
 .header {
   @include desktop {
+    width: $desktop-calendar-width;
+  }
+  @include tablet {
     position: fixed;
     z-index: 50;
-    width: $desktop-calendar-width;
+    width: $tablet-calendar-width;
   }
 
   &.mobile-menu_active {
@@ -15,7 +18,7 @@
     height: 100%;
     overflow: auto;
 
-    @include desktop {
+    @include tablet {
       overflow: inherit;
     }
   }
@@ -25,19 +28,29 @@
   &-right {
     width: 33%;
 
-    @include desktop {
+    @include tablet {
       width: 45%;
     }
   }
 
   &-left {
-    @include desktop {
+    @include tablet {
       width: 10%;
+    }
+    height: auto;
+    display: inline-flex;
+    align-self: center;
+
+    & .hamburger {
+      height: auto;
+      display: inline-flex;
+      align-self: center;
     }
   }
 
   &-middle {
     text-align: center;
+    margin: 0 12px;
   }
 
   &-right {
@@ -48,18 +61,24 @@
   }
 
   &-bgc {
-    padding: 15px 0;
+    padding: 12px;
     background: linear-gradient(146.17deg, #6441a5 0.44%, #2a0845 90.38%);
 
     @include desktop {
+      padding: 32px 0 15px;
+      & > .container {
+        padding: $desktop-calendar-padding;
+      }
+    }
+
+    @include tablet {
       background: $bunting;
-      padding-top: 32px;
-      padding-bottom: 15px;
+      padding: 24px 0 15px;
       height: 80px;
       box-sizing: border-box;
 
       & > .container {
-        padding: $desktop-calendar-padding;
+        padding: $tablet-calendar-padding;
       }
     }
   }
@@ -69,7 +88,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include desktop {
+    @include tablet {
       height: 36px;
     }
   }
@@ -89,8 +108,9 @@
     font-size: 16px;
     color: $white;
     text-decoration: none;
+    margin-right: 16px;
 
-    @include desktop {
+    @include tablet {
       display: none;
     }
 
@@ -106,21 +126,37 @@
     background-size: contain;
     text-decoration: none;
     display: inline-block;
-    margin-right: 18px;
+    margin-right: 8px;
+    @include desktop {
+      margin-right: 0;
+    }
+    @include tablet {
+      margin-right: 16px;
+      position: relative;
+    }
   }
 
   &-favorites {
+    width: 40px;
     position: relative;
-    right: -40px;
     display: inline-block;
     padding-top: 5px;
     padding-right: 9px;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1;
     text-align: right;
     color: #fff;
     text-decoration: none;
     z-index: 0;
+
+    @include desktop {
+      right: -40px;
+    }
+
+    @include tablet {
+      right: -15px;
+      font-size: 18px;
+    }
 
     &:before {
       content: "";
@@ -132,10 +168,14 @@
       margin: auto;
       width: 0;
       height: 0;
-      border-width: 16px 60px 16px 10px;
+      border-width: 12px 30px 12px 10px;
       border-style: solid;
       border-color: #9768d1 #9768d1 #9768d1 transparent;
       z-index: -1;
+
+      @include tablet {
+        border-width: 16px 60px 16px 10px;
+      }
     }
   }
 }

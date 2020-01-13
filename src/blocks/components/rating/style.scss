@@ -2,7 +2,11 @@
   background: $white;
   border: 1px solid #e3e4e5;
   box-sizing: border-box;
-  padding: 30px 20px;
+  padding: 20px;
+
+  @include desktop {
+    padding: 30px 20px;
+  }
 
   &_white-bg {
     background-color: $white;

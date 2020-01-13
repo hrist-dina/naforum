@@ -184,14 +184,18 @@
   padding: 20px 0;
 
   &__form {
-    @include desktop {
+    @include tablet {
       padding-top: 25px;
     }
   }
 
   & .datepicker {
     @include desktop {
-      padding: 0 40px 0 50px;
+      padding: $desktop-calendar-padding;
+    }
+
+    @include tablet {
+      padding: $tablet-calendar-padding;
     }
   }
 
@@ -199,16 +203,23 @@
     @include desktop {
       padding: $desktop-calendar-padding;
     }
+    @include tablet {
+      padding: $tablet-calendar-padding;
+    }
   }
 
   @include desktop {
+    width: $desktop-calendar-width;
+  }
+
+  @include tablet {
     position: fixed !important;
     left: 0;
     top: 80px;
     bottom: 0;
-    width: $desktop-calendar-width;
     z-index: 50;
     padding-top: 0;
+    width: $tablet-calendar-width;
   }
 
   &.active {
@@ -238,6 +249,11 @@
         width: 14.28571%;
         height: 52px;
         min-width: 14.28571%;
+
+        @include sm-block {
+          width: 10.28571%;
+          min-width: 10.28571%;
+        }
       }
 
       & .-other-month- {
@@ -262,6 +278,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+
+    @include mobile {
+      padding: 5px 12px 0;
+    }
   }
 
   &__date {
@@ -311,7 +331,7 @@
   }
 
   &__controll {
-    @include desktop {
+    @include tablet {
       display: none;
     }
   }
@@ -397,10 +417,13 @@
   &__wrap {
     background-color: #313443;
     min-height: 100%;
+    @include mobile {
+      padding: 0 12px;
+    }
   }
 
   &.active &__wrap {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   & .select {
@@ -472,7 +495,7 @@
   &__menu {
     display: none;
 
-    @include desktop {
+    @include tablet {
       display: block;
 
       & .modal-search {

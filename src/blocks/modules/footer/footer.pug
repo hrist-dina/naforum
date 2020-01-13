@@ -1,21 +1,23 @@
 mixin footer(isDesktop = false)
     footer.footer(class=isDesktop?'footer_desktop':'')
         .footer-top
-            .container
-                if !isDesktop
-                    .footer__title Организуете мероприятие?
-                    .button.footer__add Добавить событие
-                ul.social__list
-                    li.social__item
-                        a.social__link.social__vk(href="#")
-                    li.social__item
-                        a.social__link.social__fb(href="#")
-                    li.social__item
-                        a.social__link.social__ok(href="#")
+            .wrapper-inner
+                .container
+                    if !isDesktop
+                        .footer__title Организуете мероприятие?
+                        .button.footer__add Добавить событие
+                    ul.social__list
+                        li.social__item
+                            a.social__link.social__vk(href="#")
+                        li.social__item
+                            a.social__link.social__fb(href="#")
+                        li.social__item
+                            a.social__link.social__ok(href="#")
         .footer-bottom
-            .container
-                .footer-copyright
-                    p 2019 © «На форум.ру»
-                    p Все права защищены
+            .wrapper-inner
+                .container
+                    .footer-copyright
+                        p 2019 © «На форум.ру»
+                        p Все права защищены
 
 

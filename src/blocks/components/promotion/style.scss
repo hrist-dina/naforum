@@ -1,6 +1,16 @@
 .promotion {
-  margin-top: 100px;
-  margin-bottom: 70px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-top: 100px;
+    margin-bottom: 70px;
+  }
+
+  @include tablet {
+    margin-top: 50px;
+    margin-bottom: 35px;
+  }
 
   &__list {
     @include row-flex();
@@ -8,14 +18,22 @@
 
   & .event-organizer {
     @include col();
-    @include size(6);
+    @include size(12);
     margin-bottom: 17px;
+
+    @include sm-block {
+      @include size(6);
+    }
   }
 
   &__banner {
     margin-bottom: 17px;
     @include col();
-    @include size(6);
+    @include size(12);
+
+    @include sm-block {
+      @include size(6);
+    }
 
     &:last-child {
       margin-bottom: 0;

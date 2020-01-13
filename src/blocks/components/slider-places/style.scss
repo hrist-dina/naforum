@@ -1,12 +1,18 @@
 .slider-places {
-  margin-top: 70px;
-  margin-bottom: 60px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   padding-top: 0;
   padding-bottom: 0;
 
-  //& .section__title {
-  //  margin-right: -15px;
-  //}
+  @include desktop {
+    margin-top: 70px;
+    margin-bottom: 60px;
+  }
+
+  @include tablet {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
 
   &__info {
     background: $white;

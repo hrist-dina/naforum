@@ -13,7 +13,11 @@ body {
 
 main > section {
   &:first-child {
-    padding-top: 40px;
+    padding-top: 30px;
+
+    @include desktop {
+      padding-top: 40px;
+    }
   }
 }
 
@@ -28,6 +32,10 @@ main > section {
 
   @include desktop {
     padding: 0 0 50px 0;
+  }
+
+  @include tablet {
+    padding: 0 0 30px 0;
   }
 
   &-inner {
@@ -48,10 +56,15 @@ main > section {
     width: #{"calc(100% - #{$desktop-calendar-width})"};
     margin-left: $desktop-calendar-width;
   }
+
+  @include tablet {
+    width: #{"calc(100% - #{$tablet-calendar-width})"};
+    margin-left: $tablet-calendar-width;
+  }
 }
 
 .calendar .footer {
-  @include desktop {
+  @include tablet {
     display: block;
     width: 100%;
     margin-left: 0;
@@ -127,7 +140,7 @@ main > section {
 .overflow-hidden {
   overflow: hidden;
 
-  @include desktop {
+  @include tablet {
     overflow: inherit;
   }
 }
@@ -177,12 +190,16 @@ main > section {
 .button-link {
   display: inline-block;
   text-decoration: none;
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 15px;
   text-align: center;
   font-weight: normal;
   font-size: 15px;
   color: #ee3769;
+
+  @include desktop {
+    margin-top: 15px;
+  }
 
   &__wrap {
     text-align: center;
@@ -360,11 +377,16 @@ main > section {
 
 
   &__img {
-    height: 168px;
+    height: 188px;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @include desktop {
+      height: 168px;
+    }
+
     & img {
       max-width: 100%;
       max-height: 100%;
@@ -373,8 +395,16 @@ main > section {
 
   &__item {
     @include col();
-    @include size(3);
     @include outline-none();
+    @include size(12);
+
+    @include sm-block {
+      @include size(6)
+    }
+
+    @include desktop {
+      @include size(3);
+    }
 
     & a {
       text-decoration: none;

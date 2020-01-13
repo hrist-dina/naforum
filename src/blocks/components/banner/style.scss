@@ -1,5 +1,9 @@
 .banner {
-  margin-bottom: 70px;
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 70px;
+  }
 
   &__list {
     @include row-flex();

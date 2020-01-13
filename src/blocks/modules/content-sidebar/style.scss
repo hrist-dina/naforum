@@ -1,16 +1,25 @@
 .content-sidebar {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  @include desktop {
+    margin-bottom: 20px;
+  }
   &__box {
     @include row-flex();
   }
 
   & .content {
     @include col();
-    @include size(8);
+    @include size(12);
+    @include desktop {
+      @include size(8);
+    }
   }
 
   & .sidebar {
     @include col();
-    @include size(4);
+    @include size(12);
+    @include desktop {
+      @include size(4);
+    }
   }
 }

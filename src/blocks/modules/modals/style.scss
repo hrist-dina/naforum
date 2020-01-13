@@ -1,11 +1,15 @@
 .modal {
-  padding: 25px 40px 25px 50px;
+  padding: 25px 20px 25px 20px;
   background-color: $bunting;
   box-sizing: border-box;
   height: 100%;
   min-height: 100%;
   margin-left: 0;
   max-width: $desktop-calendar-width;
+
+  @include tablet {
+    padding: 25px 40px 25px 50px;
+  }
 
   &__close {
     position: absolute;
