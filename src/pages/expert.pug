@@ -5,7 +5,7 @@ block calendar
     +calendar(checkboxList, true)
 
 block content
-    include ../data/expert-event
+    include ../data/expert
     include ../blocks/components/description/index
     include ../blocks/components/developments/index
     include ../blocks/components/comment/index
@@ -15,4 +15,4 @@ block content
     +description(description.title, description.content, description.blockList)
     +developments(developments.title, developments.list, false)
     include ../blocks/components/slider-expert/index
-    +comment(comment.title, false, comment.list, false)
+    +comment(comment.title, true, comment.list, true)

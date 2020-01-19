@@ -31,6 +31,8 @@
     }
 
     &-title {
+      display: block;
+      text-decoration: none;
       margin-top: 5px;
       font-weight: bold;
       font-size: 22px;
@@ -42,6 +44,7 @@
 
     &-leading {
       display: inline-block;
+      text-decoration: none;
       font-size: 15px;
       line-height: 15px;
       color: #9768d1;

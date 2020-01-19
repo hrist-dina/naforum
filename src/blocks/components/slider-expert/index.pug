@@ -11,10 +11,10 @@ section.slider-content.slider-expert
                 ul.slider-content__list.js-slider-expert
                     for item in experts
                         li.slider-content__item
-                            .slider-content__img(style=`background-image: url(${item.img})`)
+                            a.slider-content__img(href='#' style=`background-image: url(${item.img})`)
                             .slider-expert__info
                                 .slider-expert__info-leading=item.leading
-                                .slider-expert__info-title=item.title
+                                a(href='#').slider-expert__info-title=item.title
                                 .slider-expert__info-bottom
                                     .slider-expert__info-date=item.date
                                     .slider-expert__info-reviews

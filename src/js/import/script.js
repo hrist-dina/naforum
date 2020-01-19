@@ -158,6 +158,19 @@ $(document).ready(function() {
     $(".js-header-middle, .js-header-right").toggleClass("hide");
   });
 
+  /* Autoresize textarea */
+  $("textarea")
+    .each(function() {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function() {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+
   $(".js-slider-expert").slick({
     prevArrow: $(".js-slider-places-prev"),
     nextArrow: $(".js-slider-places-next"),

@@ -1,12 +1,18 @@
 .expert-info {
+  margin-bottom: 30px;
   &:first-child {
     padding-top: 0;
+  }
+
+  & ~ .description {
+    margin-top: 35px;
   }
 
   &__bg {
     padding-top: 48px;
     background: linear-gradient(135.32deg, #6441a5 0.44%, #2a0845 90.38%);
-    margin-bottom: -104px;
+    max-height: 340px;
+    box-sizing: border-box;
   }
 
   &__img {
@@ -16,7 +22,6 @@
     max-height: 396px;
     border: 3px solid #ffffff;
     box-sizing: border-box;
-    margin-bottom: -104px;
 
     & img {
       max-width: 100%;
@@ -26,20 +31,28 @@
 
   &__block {
     position: relative;
-    padding-top: 150px;
-    margin-bottom: 30px;
+    padding-top: 90px;
+    @include tablet {
+      padding-top: 110px;
+    }
   }
 
   &__name {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 28px;
+    line-height: 36px;
     font-weight: bold;
     color: #151d3f;
+    margin-bottom: 5px;
+
+    @include tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
 
   &__city {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 21px;
     font-weight: normal;
     color: #9a9a9e;
   }

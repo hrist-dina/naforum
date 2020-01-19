@@ -29,6 +29,13 @@
     text-align: center;
     color: $eclipse;
     text-decoration: none;
+
+    @include mobile {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
   &__prev,
@@ -36,6 +43,10 @@
     @extend %fa-icon;
     @extend .fal;
     font-size: 26px;
+  }
+
+  &__next {
+    margin-right: 0;
   }
 
   &__item:hover:not(.active) {

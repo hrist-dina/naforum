@@ -10,7 +10,7 @@ mixin developments(title, list, showAll = false)
                                 .developments__content
                                     .developments__date=item.date
                                     .developments__city=item.city
-                                    .developments__title=item.text
+                                    a(href='#').developments__title=item.text
                                 ul.developments__tags
                                     for tag in item.tags
                                         li(class=tag.color)=tag.label

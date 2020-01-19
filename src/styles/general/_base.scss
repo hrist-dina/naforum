@@ -9,6 +9,7 @@ body {
   line-height: normal;
   font-weight: normal;
   color: #9a9a9e;
+  min-width: 320px;
 }
 
 main > section {
@@ -221,12 +222,18 @@ main > section {
 .button-more {
   display: inline-block;
   position: relative;
-  font-size: 16px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 18px;
   text-align: center;
   color: #151D3F;
-  padding-top: 52px;
+  padding-top: 42px;
   text-decoration: none;
+
+  @include desktop {
+    font-size: 16px;
+    line-height: 21px;
+    padding-top: 52px;
+  }
 
   &:before,
   &:after {
@@ -242,13 +249,22 @@ main > section {
 
   &:before {
     width: 3px;
-    height: 40px;
+    height: 30px;
+
+    @include desktop {
+      height: 40px;
+    }
   }
 
   &:after {
-    top: 18px;
-    width: 40px;
+    top: 13px;
+    width: 30px;
     height: 3px;
+
+    @include desktop {
+      top: 18px;
+      width: 40px;
+    }
   }
 }
 
@@ -377,11 +393,13 @@ main > section {
 
 
   &__img {
+    display: block;
     height: 188px;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    text-decoration: none;
 
     @include desktop {
       height: 168px;

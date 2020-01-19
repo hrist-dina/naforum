@@ -1,21 +1,23 @@
-mixin comment(title, addComment = false, list, showMore = false)
+mixin comment(title, addComment = false, list, needPagination = false)
     section.comment
-        .container
-            .section__title=title
-            if addComment
-                .comment__add-wrap
-                    a(href="#").comment__add Оставить комментарий
-            if list
-            ul.comment__list
-                for item in list
-                    li.comment__item
-                        .comment__author
-                            img(src=item.img, alt="")
-                            .comment__info
-                                .comment__name=item.name
-                                .comment__date=item.date
-                        .comment__text=item.text
-            if showMore
-                .button-link__wrap
-                    a.button-link.comment__button(href="#") Загрузить еще
+        .wrapper-inner
+            .container
+                .section__title=title
+                if addComment
+                    .comment__add-wrap
+                        form(action='' method='POST').comment__add
+                            textarea(name='comment' placeholder='Написать комментарий...').comment__add-area
+                            button(type='submit').comment__add-button
+                if list
+                    ul.comment__list
+                        for item in list
+                            li.comment__item
+                                .comment__author
+                                    img(src=item.img, alt="")
+                                    .comment__info
+                                        .comment__name=item.name
+                                        .comment__date=item.date
+                                .comment__text=item.text
+                if needPagination
+                    include ../pagination/index
 

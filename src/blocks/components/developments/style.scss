@@ -2,12 +2,12 @@
   padding-top: 20px;
   padding-bottom: 20px;
   background: #f7f7f7;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 
   @include tablet {
     padding-top: 50px;
     padding-bottom: 45px;
-    margin-bottom: 72px;
+    margin-bottom: 30px;
   }
 
   &__list {
@@ -75,6 +75,8 @@
   }
 
   &__title {
+    display: block;
+    text-decoration: none;
     margin-top: 15px;
     line-height: 29px;
     font-size: 22px;
