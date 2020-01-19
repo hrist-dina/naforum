@@ -5,15 +5,19 @@
   &__img {
     width: 100%;
     position: relative;
-    min-height: 468px;
+    min-height: 320px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @include md-block {
+      min-height: 468px;
+    }
   }
 
   &__block {
     position: relative;
-    margin: 24px 0 16px;
+    margin: 24px 0 20px;
   }
 
   &__name {
@@ -25,5 +29,9 @@
     line-height: 18px;
     font-weight: normal;
     color: #9a9a9e;
+    margin-top: 10px;
+    @include tablet {
+      margin-top: 0;
+    }
   }
 }

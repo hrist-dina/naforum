@@ -32,7 +32,7 @@ export class Map {
     return {
       position: {
         top: this.isMobile() ? 130 : 130,
-        right: 50
+        right: this.isMobile() ? 20 : 50
       }
     };
   }
