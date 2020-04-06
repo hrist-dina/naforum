@@ -9,10 +9,11 @@ block content
     include ../blocks/components/description/index
     include ../blocks/components/developments/index
     include ../blocks/components/comment/index
+    include ../blocks/components/slider-expert/index
     include ../blocks/components/banner/index
 
     include ../blocks/components/expert-info/index
     +description(description.title, description.content, description.blockList)
     +developments(developments.title, developments.list, false)
-    include ../blocks/components/slider-expert/index
+    +slider-expert
     +comment(comment.title, true, comment.list, true)

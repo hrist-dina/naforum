@@ -9,10 +9,10 @@ block content
     include ../blocks/components/article-info/index
     include ../blocks/components/description/index
     include ../blocks/components/comment/index
-    include ../blocks/components/banner/index
+    include ../blocks/components/slider-expert/index
 
-
-    +description(description.title, description.content, description.blockList)
+    .wrapper-head
+        +article-info
+    +description(description.title, description.content, description.blockList, description.img)
     +comment(comment.title, true, comment.list, true)
-    include ../blocks/components/article-similar/index
-    +banner(banner,true)
+    +slider-expert('Похожие статьи')

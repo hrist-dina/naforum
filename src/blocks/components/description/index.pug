@@ -1,4 +1,4 @@
-mixin description(title, content, blockList)
+mixin description(title, content, blockList, img)
     section.description
         .wrapper-inner
             .container
@@ -8,6 +8,8 @@ mixin description(title, content, blockList)
                     .description__content
                         for item in content
                             p=item
+                        if img
+                            img(src=img)
                     if blockList
                         .description__block-list
                             for block in blockList

@@ -1,21 +1,24 @@
 include data
 
-section.slider-content.slider-expert
-    .wrapper-inner
-        .container
-            .section__title Колонка эксперта
-            .slider-wrap
-                .slider-arrows
-                    .slider-prev.js-slider-places-prev
-                    .slider-next.js-slider-places-next
-                ul.slider-content__list.js-slider-expert
-                    for item in experts
-                        li.slider-content__item
-                            a.slider-content__img(href='#' style=`background-image: url(${item.img})`)
-                            .slider-expert__info
-                                .slider-expert__info-leading=item.leading
-                                a(href='#').slider-expert__info-title=item.title
-                                .slider-expert__info-bottom
-                                    .slider-expert__info-date=item.date
-                                    .slider-expert__info-reviews
-                                        span=item.reviews
+mixin slider-expert(title, expertList)
+    if !expertList
+        - expertList = experts
+    section.slider-content.slider-expert
+        .wrapper-inner
+            .container
+                .section__title=title || 'Колонка эксперта'
+                .slider-wrap
+                    .slider-arrows
+                        .slider-prev.js-slider-places-prev
+                        .slider-next.js-slider-places-next
+                    ul.slider-content__list.js-slider-expert
+                        for item in expertList
+                            li.slider-content__item
+                                a.slider-content__img(href='#' style=`background-image: url(${item.img})`)
+                                .slider-expert__info
+                                    .slider-expert__info-leading=item.leading
+                                    a(href='#').slider-expert__info-title=item.title
+                                    .slider-expert__info-bottom
+                                        .slider-expert__info-date=item.date
+                                        .slider-expert__info-reviews
+                                            span=item.reviews

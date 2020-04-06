@@ -1,8 +1,12 @@
-section.article-info
-    .article-info__img
-        img(src="pictures/expert-info-1.jpg" alt="")
-    .container
-        .article-info__info
-            .article-info__name Максим Батырев 
-            .article-info__article Как управлять сложными подчиненными 
-            .article-info__date 23 сентября 2018
+
+//- Шапка детальной страницы статьи
+mixin article-info
+    section.article-info
+        .article-info__img(style="background-image: url(pictures/article/bg.jpg)")
+        .wrapper-inner
+            .container
+                .article-info__info
+                    h1.article-info__article Как управлять сложными подчиненными
+                    .article-info__meta
+                        a(href='#').article-info__name Максим Батырев
+                        .article-info__date 23 сентября 2018

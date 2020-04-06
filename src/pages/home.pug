@@ -9,6 +9,7 @@ block content
     include ../blocks/components/developments/index
     include ../blocks/components/banner/index
     include ../blocks/components/rating/index
+    include ../blocks/components/slider-expert/index
 
     include ../blocks/components/top-section/index
     +master-class-top
@@ -18,7 +19,7 @@ block content
         article.sidebar
             +rating(rating.title, rating.list, true)
 
-    include ../blocks/components/slider-expert/index
+    +slider-expert
 
     +developments(developments.title, developments.list)
     include ../blocks/components/promotion/index
