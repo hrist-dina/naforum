@@ -11,11 +11,14 @@
 
   &__item {
     @include u-col(30px);
-    @include u-size(6, $columns, 30px);
+    @include u-size(12, $columns, 30px);
+    @include desktop() {
+      @include u-size(6, $columns, 30px);
+    }
     margin-bottom: 24px;
     border: 2px solid #e3e4e5;
     box-sizing: border-box;
-    height: 192px;
+    min-height: 192px;
   }
 
   &__middle {
@@ -24,10 +27,12 @@
 
   &__name {
     font-size: 22px;
-    line-height: 30px;
+    line-height: 24px;
     font-weight: bold;
     color: #383b73;
     text-decoration: none;
+    margin-bottom: 5px;
+    display: inline-block;
   }
 
   &__city {
@@ -35,6 +40,7 @@
     line-height: 15px;
     font-weight: normal;
     color: #9a9a9e;
+    margin-bottom: 15px;
   }
 
   &__activity {
@@ -46,7 +52,11 @@
   }
 
   &__img {
-    margin-right: 25px;
+    margin-bottom: 10px;
+    @include sm-block {
+      margin-right: 25px;
+      margin-bottom: 0;
+    }
 
     & img {
       max-width: 105px;
@@ -58,8 +68,18 @@
   }
 
   &-inner {
-    padding: 32px;
+    padding: 16px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+
+    @include sm-block {
+      padding: 24px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 32px;
+    }
   }
 }

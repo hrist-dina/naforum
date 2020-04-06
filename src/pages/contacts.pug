@@ -1,7 +1,13 @@
 extends ../views/layouts/default
+
+block calendar
+    include ../blocks/components/calendar/index
+    +calendar(checkboxList, true)
+
 block content
     include ../blocks/components/title/index
 
-    +title('Контакты')
-    include ../blocks/components/contacts-info/index
-    include ../blocks/components/contacts-form/index
+    .wrapper-inner
+        +title('Контакты')
+        include ../blocks/components/contacts-info/index
+        include ../blocks/components/contacts-form/index

@@ -114,7 +114,11 @@
 
   &-wrap {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    @include sm-block {
+      align-items: center;
+      flex-direction: row;
+    }
   }
 
   &-label {
@@ -122,7 +126,12 @@
     font-size: 16px;
     line-height: 16px;
     color: #151d3f;
-    margin-right: 20px;
+    margin-bottom: 5px;
+
+    @include sm-block {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
 
     & ~ .select2 {
       display: inline-block;
