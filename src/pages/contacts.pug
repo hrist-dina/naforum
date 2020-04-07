@@ -6,8 +6,16 @@ block calendar
 
 block content
     include ../blocks/components/title/index
+    include ../blocks/modules/content-half/index
+    include ../blocks/components/contacts-info/index
+    include ../blocks/components/contacts-form/index
 
     .wrapper-inner
         +title('Контакты')
-        include ../blocks/components/contacts-info/index
-        include ../blocks/components/contacts-form/index
+        +content-half
+            article.content-half__part
+                +contacts-info
+                    p Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.
+            article.content-half__part
+                +contacts-form
+    include ../blocks/components/map/index

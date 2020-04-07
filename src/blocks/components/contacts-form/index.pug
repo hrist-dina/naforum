@@ -1,16 +1,17 @@
-section.contacts-form
-    .container
-        .contacts-form__description Оставьте сообщение
-        form.contacts-form.validator.js-contact-form(action="", method="POST")
-            label.contacts-form__label
-                input.contacts-form__input-text(name="name", data-validator-require="true", type="text" placeholder="Ваше имя")
-            label.contacts-form__label
-                input.contacts-form__input-text(name="email", data-validator-require="true" data-validator-type="email", type="text", placeholder="Email")
-            label.contacts-form__label
-                input.contacts-form__input-text.js-phone-inputmask(name="phone", data-validator-require="true",  data-validator-type="phone", type="text", placeholder="Контактный телефон")
-            label.contacts-form__label
-                textarea.contacts-form__textarea(name="message", data-validator-require="true", placeholder="Сообщение")
+
+mixin contacts-form
+    section.contacts-form
+        .__title Оставьте сообщение
+        form.__box.validator.js-contact-form(action="", method="POST")
+            label.__label
+                input.__input-text(name="name", data-validator-require="true", type="text" placeholder="Ваше имя")
+            label.__label
+                input.__input-text(name="email", data-validator-require="true" data-validator-type="email", type="text", placeholder="Email")
+            label.__label
+                input.__input-text.js-phone-inputmask(name="phone", data-validator-require="true",  data-validator-type="phone", type="text", placeholder="Контактный телефон")
+            label.__label
+                textarea.__textarea(name="message", data-validator-require="true", placeholder="Сообщение")
+            button.button.__button(type="submit", disabled=true)  Отправить сообщение
             label.input-checkbox-color
                 input.js-validator-agree(name="agree", type="checkbox")
-                span.contacts-form__label-text Я согласен с условиями обработки персональных данных
-            button.button.contacts-form__button(type="submit", disabled=true)  Отправить сообщение
+                span.contacts-form__label-text Нажимая на кнопку, я соглашаюсь на обработку персональных данных

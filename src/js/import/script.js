@@ -161,6 +161,7 @@ $(document).ready(function() {
   /* Autoresize textarea */
   $("textarea")
     .each(function() {
+      console.log(this.scrollHeight);
       this.setAttribute(
         "style",
         "height:" + this.scrollHeight + "px;overflow-y:hidden;"
