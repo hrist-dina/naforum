@@ -1,6 +1,6 @@
 .content-half {
   margin-bottom: 30px;
-  @include desktop {
+  @include xl-block {
     margin-bottom: 60px;
   }
 
@@ -11,14 +11,12 @@
   &__part {
     @include col();
     @include size(12);
-    @include desktop {
-      @include size(6);
-    }
+    @include size-xl(6);
 
     &:first-child {
       margin-bottom: 30px;
 
-      @include desktop {
+      @include xl-block {
         margin-bottom: 0;
       }
     }
